@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="masterchild.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout id="pgl1">
+                <af:table value="#{bindings.departmentsFindAll.collectionModel}" var="row"
+                          rows="#{bindings.departmentsFindAll.rangeSize}"
+                          emptyText="#{bindings.departmentsFindAll.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.departmentsFindAll.rangeSize}" rowBandingInterval="0"
+                          filterModel="#{bindings.departmentsFindAllQuery.queryDescriptor}"
+                          queryListener="#{bindings.departmentsFindAllQuery.processQuery}" filterVisible="true"
+                          varStatus="vs" selectedRowKeys="#{bindings.departmentsFindAll.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.departmentsFindAll.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t1" editingMode="clickToEdit">
+                    <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.departmentsFindAll.hints.departmentId.label}"
+                               id="c1">
+                        <af:inputText value="#{row.bindings.departmentId.inputValue}"
+                                      label="#{bindings.departmentsFindAll.hints.departmentId.label}"
+                                      required="#{bindings.departmentsFindAll.hints.departmentId.mandatory}"
+                                      columns="#{bindings.departmentsFindAll.hints.departmentId.displayWidth}"
+                                      maximumLength="#{bindings.departmentsFindAll.hints.departmentId.precision}"
+                                      shortDesc="#{bindings.departmentsFindAll.hints.departmentId.tooltip}" id="it1">
+                            <f:validator binding="#{row.bindings.departmentId.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentName.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.departmentsFindAll.hints.departmentName.label}"
+                               id="c2">
+                        <af:inputText value="#{row.bindings.departmentName.inputValue}"
+                                      label="#{bindings.departmentsFindAll.hints.departmentName.label}"
+                                      required="#{bindings.departmentsFindAll.hints.departmentName.mandatory}"
+                                      columns="#{bindings.departmentsFindAll.hints.departmentName.displayWidth}"
+                                      maximumLength="#{bindings.departmentsFindAll.hints.departmentName.precision}"
+                                      shortDesc="#{bindings.departmentsFindAll.hints.departmentName.tooltip}" id="it2">
+                            <f:validator binding="#{row.bindings.departmentName.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.departmentsFindAll.hints.locationId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.departmentsFindAll.hints.locationId.label}"
+                               id="c3">
+                        <af:inputText value="#{row.bindings.locationId.inputValue}"
+                                      label="#{bindings.departmentsFindAll.hints.locationId.label}"
+                                      required="#{bindings.departmentsFindAll.hints.locationId.mandatory}"
+                                      columns="#{bindings.departmentsFindAll.hints.locationId.displayWidth}"
+                                      maximumLength="#{bindings.departmentsFindAll.hints.locationId.precision}"
+                                      shortDesc="#{bindings.departmentsFindAll.hints.locationId.tooltip}" id="it3">
+                            <f:validator binding="#{row.bindings.locationId.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                </af:table>
+                <af:table value="#{bindings.employeesList.collectionModel}" var="row"
+                          rows="#{bindings.employeesList.rangeSize}"
+                          emptyText="#{bindings.employeesList.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.employeesList.rangeSize}" rowBandingInterval="0"
+                          filterModel="#{bindings.employeesListQuery.queryDescriptor}"
+                          queryListener="#{bindings.employeesListQuery.processQuery}" filterVisible="true"
+                          varStatus="vs" selectedRowKeys="#{bindings.employeesList.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.employeesList.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t2">
+                    <af:column sortProperty="#{bindings.employeesList.hints.commissionPct.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.commissionPct.label}" id="c4">
+                        <af:outputText value="#{row.commissionPct}" id="ot1"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.employeesList.hints.email.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.email.label}" id="c5">
+                        <af:outputText value="#{row.email}" id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.employeesList.hints.employeeId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.employeeId.label}" id="c6">
+                        <af:outputText value="#{row.employeeId}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.employeesList.hints.firstName.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.firstName.label}" id="c7">
+                        <af:outputText value="#{row.firstName}" id="ot4"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.employeesList.hints.hireDate.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.hireDate.label}" id="c8">
+                        <f:facet name="filter">
+                            <af:inputDate value="#{vs.filterCriteria.hireDate}" id="id1">
+                                <af:convertDateTime pattern="#{bindings.employeesList.hints.hireDate.format}"/>
+                            </af:inputDate>
+                        </f:facet>
+                        <af:outputText value="#{row.hireDate}" id="ot5">
+                            <af:convertDateTime pattern="#{bindings.employeesList.hints.hireDate.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.employeesList.hints.jobId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.jobId.label}" id="c9">
+                        <af:outputText value="#{row.jobId}" id="ot6"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.employeesList.hints.lastName.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.lastName.label}" id="c10">
+                        <af:outputText value="#{row.lastName}" id="ot7"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.employeesList.hints.phoneNumber.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.phoneNumber.label}" id="c11">
+                        <af:outputText value="#{row.phoneNumber}" id="ot8"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.employeesList.hints.salary.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.employeesList.hints.salary.label}" id="c12">
+                        <af:outputText value="#{row.salary}" id="ot9"/>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

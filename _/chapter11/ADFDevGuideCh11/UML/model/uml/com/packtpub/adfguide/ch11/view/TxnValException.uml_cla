@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:8830eec7-88f9-479f-b1d3-e50586f349a5'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='TxnValException'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:bbbeeb5b-b87e-42d8-869d-c5cadca8ddc1'>
+   <general href='urn:uuid:9923bf11-2fc7-49fe-a6f2-e1f561addace'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

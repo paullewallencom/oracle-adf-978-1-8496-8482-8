@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="dept-emp-train-task-flow-definition">
+    <default-activity>deptView</default-activity>
+    <managed-bean id="__3">
+      <managed-bean-name>TrainBean</managed-bean-name>
+      <managed-bean-class>com.packtpub.adfguide.ch9.view.TrainBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="deptView">
+      <display-name>Department</display-name>
+      <page>/train/deptTrain.jsff</page>
+      <train-stop>
+        <display-name id="de">Department</display-name>
+      </train-stop>
+    </view>
+    <view id="empView">
+      <display-name>Employees</display-name>
+      <page>/train/empTrain.jsff</page>
+      <train-stop>
+        <display-name id="em">Employees</display-name>
+        <outcome>hasMinimumEmployees</outcome>
+      </train-stop>
+    </view>
+    <task-flow-call id="emp-detail-task-flow-definition">
+      <task-flow-reference>
+        <document>/WEB-INF/train/emp-detail-task-flow-definition.xml</document>
+        <id>emp-detail-task-flow-definition</id>
+      </task-flow-reference>
+      <train-stop>
+        <display-name id="deta">Details</display-name>
+      </train-stop>
+    </task-flow-call>
+    <method-call id="hasMinumumEmployees">
+      <method>#{bindings.hasMinumumEmployees.execute}</method>
+      <return-value>#{pageFlowScope.hasEmployees}</return-value>
+      <outcome>
+        <fixed-outcome>continue</fixed-outcome>
+      </outcome>
+    </method-call>
+    <router id="router">
+      <case id="__6">
+        <expression>#{pageFlowScope.hasEmployees eq true}</expression>
+        <outcome>true</outcome>
+      </case>
+      <case id="__7">
+        <expression>#{pageFlowScope.hasEmployees eq false}</expression>
+        <outcome>false</outcome>
+      </case>
+      <default-outcome>true</default-outcome>
+    </router>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>hasMinimumEmployees</from-outcome>
+        <to-activity-id>hasMinumumEmployees</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>hasMinumumEmployees</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>continue</from-outcome>
+        <to-activity-id>router</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>router</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>true</from-outcome>
+        <to-activity-id>empView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome>false</from-outcome>
+        <to-activity-id>deptView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

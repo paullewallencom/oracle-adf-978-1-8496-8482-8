@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountryToRegionalViewLink"
+  Version="11.1.2.60.81">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.packtpub.adfguide.ch5.model.view.link.CountryToRegionalViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CountryVO"
+    Cardinality="1"
+    Source="true"
+    Owner="com.packtpub.adfguide.ch5.model.view.CountryVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CountryVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch5.model.view.CountryVO.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="RegionalOfficeVO"
+    Cardinality="-1"
+    Owner="com.packtpub.adfguide.ch5.model.view.RegionalOfficeVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="RegionalOfficeVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch5.model.view.RegionalOfficeVO.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.packtpub.adfguide.ch5.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

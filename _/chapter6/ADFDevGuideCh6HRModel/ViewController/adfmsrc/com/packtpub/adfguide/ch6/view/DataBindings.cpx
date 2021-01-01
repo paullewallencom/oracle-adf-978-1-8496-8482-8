@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.packtpub.adfguide.ch6.view" ClientType="Generic">
+  <pageMap>
+    <page path="/lovFromSharedAM.jsf" usageId="com_packtpub_adfguide_ch6_view_lovFromSharedAMPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_packtpub_adfguide_ch6_view_lovFromSharedAMPageDef"
+          path="com.packtpub.adfguide.ch6.view.pageDefs.lovFromSharedAMPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRAppModuleDataControl" Package="com.packtpub.adfguide.ch6.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

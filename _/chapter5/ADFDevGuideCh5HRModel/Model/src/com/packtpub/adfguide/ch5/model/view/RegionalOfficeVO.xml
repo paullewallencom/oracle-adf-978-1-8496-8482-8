@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RegionalOfficeVO"
+  Version="11.1.2.60.81"
+  SelectList="RegionalOfficeEO.BRANCH_ID, 
+       RegionalOfficeEO.BRANCH_NAME, 
+       RegionalOfficeEO.REGION_ID, 
+       RegionalOfficeEO.COUNTRY_ID"
+  FromList="REGIONAL_OFFICE RegionalOfficeEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="CountryVA"
+    ViewObjectName="com.packtpub.adfguide.ch5.model.view.CountryVO">
+    <ViewCriteriaUsage
+      Name="CountryByRgionVC"
+      FullName="com.packtpub.adfguide.ch5.model.view.CountryVO.CountryByRgionVC"/>
+    <ParameterMap>
+      <PIMap Variable="bindVarRegionId">
+        <TransientExpression><![CDATA[RegionId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_CountryId"
+    ListVOName="CountryVA"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="RegionalOfficeEO"
+    Entity="com.packtpub.adfguide.ch5.model.entity.RegionalOfficeEO"/>
+  <ViewAttribute
+    Name="BranchId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BranchId"
+    EntityUsage="RegionalOfficeEO"
+    AliasName="BRANCH_ID"/>
+  <ViewAttribute
+    Name="BranchName"
+    PrecisionRule="true"
+    EntityAttrName="BranchName"
+    EntityUsage="RegionalOfficeEO"
+    AliasName="BRANCH_NAME"/>
+  <ViewAttribute
+    Name="RegionId"
+    PrecisionRule="true"
+    EntityAttrName="RegionId"
+    EntityUsage="RegionalOfficeEO"
+    AliasName="REGION_ID"/>
+  <ViewAttribute
+    Name="CountryId"
+    PrecisionRule="true"
+    EntityAttrName="CountryId"
+    EntityUsage="RegionalOfficeEO"
+    AliasName="COUNTRY_ID"
+    LOVName="LOV_CountryId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobHistoryVO"
+  Version="11.1.2.60.81"
+  SelectList="JobHistoryEO.EMPLOYEE_ID, 
+       JobHistoryEO.START_DATE, 
+       JobHistoryEO.END_DATE, 
+       JobHistoryEO.JOB_ID, 
+       JobHistoryEO.DEPARTMENT_ID"
+  FromList="HR.JOB_HISTORY JobHistoryEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  IsEffectiveDated="true">
+  <EntityUsage
+    Name="JobHistoryEO"
+    Entity="com.packtpub.adfguide.ch4.model.entity.JobHistoryEO"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="JobHistoryEO"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="StartDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    IsEffectiveStartDate="true"
+    EntityAttrName="StartDate"
+    EntityUsage="JobHistoryEO"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    IsEffectiveEndDate="true"
+    EntityAttrName="EndDate"
+    EntityUsage="JobHistoryEO"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="JobId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="JobId"
+    EntityUsage="JobHistoryEO"
+    AliasName="JOB_ID"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="JobHistoryEO"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="SysEffectiveDate"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="VARCHAR2"
+    AliasName="SysEffectiveDate"
+    Passivate="true"
+    SQLType="DATE"/>
+</ViewObject>

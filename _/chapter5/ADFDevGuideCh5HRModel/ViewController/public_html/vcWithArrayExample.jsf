@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="vcWithArrayExample.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="DepartmentEO" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.DepartmentVCQuery.queryDescriptor}"
+                              model="#{bindings.DepartmentVCQuery.queryModel}"
+                              queryListener="#{bindings.DepartmentVCQuery.processQuery}"
+                              queryOperationListener="#{bindings.DepartmentVCQuery.processQueryOperation}"
+                              resultComponentId="::resId1"/>
+                </af:panelHeader>
+                <af:table value="#{bindings.Departments.collectionModel}" var="row"
+                          rows="#{bindings.Departments.rangeSize}"
+                          emptyText="#{bindings.Departments.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.Departments.rangeSize}" rowBandingInterval="0"
+                          filterModel="#{bindings.DepartmentVCQuery.queryDescriptor}"
+                          queryListener="#{bindings.DepartmentVCQuery.processQuery}" filterVisible="true" varStatus="vs"
+                          selectedRowKeys="#{bindings.Departments.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.Departments.collectionModel.makeCurrent}" rowSelection="single"
+                          id="resId1">
+                    <af:column sortProperty="#{bindings.Departments.hints.DepartmentId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Departments.hints.DepartmentId.label}"
+                               id="resId1c1">
+                        <af:outputText value="#{row.DepartmentId}" id="ot1">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.Departments.hints.DepartmentId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.Departments.hints.DepartmentName.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Departments.hints.DepartmentName.label}"
+                               id="resId1c2">
+                        <af:outputText value="#{row.DepartmentName}" id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.Departments.hints.ManagerId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Departments.hints.ManagerId.label}" id="resId1c3">
+                        <af:outputText value="#{row.ManagerId}" id="ot3">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.Departments.hints.ManagerId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.Departments.hints.LocationId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Departments.hints.LocationId.label}"
+                               id="resId1c4">
+                        <af:outputText value="#{row.LocationId}" id="ot4">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.Departments.hints.LocationId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.packtpub.adfguide.ch5.view" ClientType="Generic">
+  <pageMap>
+    <page path="/compositeVOExample.jsf" usageId="com_packtpub_adfguide_ch5_view_departmentsPageDef"/>
+    <page path="/clobDomainExample.jsf" usageId="com_packtpub_adfguide_ch5_view_clobDomainExamplePageDef"/>
+    <page path="/vcWithArrayExample.jsf" usageId="com_packtpub_adfguide_ch5_view_vcWithArrayExamplePageDef"/>
+    <page path="/programmaticVO.jsf" usageId="com_packtpub_adfguide_ch5_view_programmaticVOPageDef"/>
+    <page path="/dynamicVOEOExample.jsf" usageId="com_packtpub_adfguide_ch5_view_dynamicVOEOExamplePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_packtpub_adfguide_ch5_view_departmentsPageDef"
+          path="com.packtpub.adfguide.ch5.view.pageDefs.departmentsPageDef"/>
+    <page id="com_packtpub_adfguide_ch5_view_clobDomainExamplePageDef"
+          path="com.packtpub.adfguide.ch5.view.pageDefs.clobDomainExamplePageDef"/>
+    <page id="com_packtpub_adfguide_ch5_view_vcWithArrayExamplePageDef"
+          path="com.packtpub.adfguide.ch5.view.pageDefs.vcWithArrayExamplePageDef"/>
+    <page id="com_packtpub_adfguide_ch5_view_programmaticVOPageDef"
+          path="com.packtpub.adfguide.ch5.view.pageDefs.programmaticVOPageDef"/>
+    <page id="com_packtpub_adfguide_ch5_view_dynamicVOEOExamplePageDef"
+          path="com.packtpub.adfguide.ch5.view.pageDefs.dynamicVOEOExamplePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRServiceAppModuleDataControl" Package="com.packtpub.adfguide.ch5.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRServiceAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

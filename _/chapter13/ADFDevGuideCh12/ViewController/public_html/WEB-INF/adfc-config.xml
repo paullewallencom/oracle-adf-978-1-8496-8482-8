@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__1">
+    <managed-bean-name>TestBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch12.view.TestBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>SimpleViewBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch12.view.SimpleViewBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>CRUDBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch12.view.CRUDBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

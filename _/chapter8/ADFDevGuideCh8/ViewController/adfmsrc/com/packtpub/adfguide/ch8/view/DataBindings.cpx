@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.packtpub.adfguide.ch8.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/department.jsf" usageId="com_packtpub_adfguide_ch8_view_departmentPageDef"/>
+    <page path="/searchView.jsf" usageId="com_packtpub_adfguide_ch8_view_searchViewPageDef"/>
+    <page path="PageFlow#initSessionWithUserLoc"
+          usageId="com_packtpub_adfguide_ch8_view_adfc_config___initSessionWithUserLocPageDef"/>
+    <page path="/searchSourceView.jsf" usageId="com_packtpub_adfguide_ch8_view_mainViewPageDef"/>
+    <page path="/treeCRUD.jsf" usageId="com_packtpub_adfguide_ch8_view_treePageDef"/>
+    <page path="/treeSearch.jsf" usageId="com_packtpub_adfguide_ch8_view_treeSearchPageDef"/>
+    <page path="/targetDataSource.jsf" usageId="com_packtpub_adfguide_ch8_view_targetDataSourcePageDef"/>
+    <page path="/list.jsf" usageId="com_packtpub_adfguide_ch8_view_listPageDef"/>
+    <page path="/mulitSelect.jsf" usageId="com_packtpub_adfguide_ch8_view_mulitSelectPageDef"/>
+    <page path="/masterDetail.jsf" usageId="com_packtpub_adfguide_ch8_view_masterDetailPageDef"/>
+    <page path="/hvViewer.jsf" usageId="com_packtpub_adfguide_ch8_view_hvViewerPageDef"/>
+    <page path="/employee.jsf" usageId="com_packtpub_adfguide_ch8_view_employeePageDef"/>
+    <page path="/serachInterceptor.jsf" usageId="com_packtpub_adfguide_ch8_view_serachInterceptorPageDef"/>
+    <page path="/panelGridLayoutSample.jsf" usageId="com_packtpub_adfguide_ch8_view_panelGridLayoutSamplePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_packtpub_adfguide_ch8_view_departmentPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.departmentPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_searchViewPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.searchViewPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_adfc_config___initSessionWithUserLocPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.adfc_config___initSessionWithUserLocPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_mainViewPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.mainViewPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_treePageDef" path="com.packtpub.adfguide.ch8.view.pageDefs.treePageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_treeSearchPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.treeSearchPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_targetDataSourcePageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.targetDataSourcePageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_listPageDef" path="com.packtpub.adfguide.ch8.view.pageDefs.listPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_mulitSelectPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.mulitSelectPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_masterDetailPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.masterDetailPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_hvViewerPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.hvViewerPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_employeePageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.employeePageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_serachInterceptorPageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.serachInterceptorPageDef"/>
+    <page id="com_packtpub_adfguide_ch8_view_panelGridLayoutSamplePageDef"
+          path="com.packtpub.adfguide.ch8.view.pageDefs.panelGridLayoutSamplePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRServiceAppModuleDataControl" Package="com.packtpub.adfguide.ch8.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRServiceAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

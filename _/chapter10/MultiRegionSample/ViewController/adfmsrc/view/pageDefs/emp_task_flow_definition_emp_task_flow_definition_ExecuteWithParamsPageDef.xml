@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.17"
+                id="emp_task_flow_definition_emp_task_flow_definition_ExecuteWithParamsPageDef" Package="view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmployeesView1" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesView1Iterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesView1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="varDeptID" NDValue="#{pageFlowScope.DepartmentId}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

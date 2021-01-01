@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="NonDBModel"
+  Version="11.1.2.60.81"
+  SeparateXMLFiles="true"
+  PackageName="com.packtpub.adfguide.ch6.model.nondb">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../../../../NonDBModel.jpr"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_NamedConnection" Value="HR"/>
+    <Attr Name="_appModuleNames0" Value="com.packtpub.adfguide.ch6.model.nondb.NonDBAppModuleService"/>
+  </DesignTime>
+  <Containee
+    Name="nondb"
+    PackageName="com.packtpub.adfguide.ch6.model.nondb"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="view"
+    PackageName="com.packtpub.adfguide.ch6.model.nondb.view"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppContainee
+    Name="LookupModel"
+    FullName="com.packtpub.adfguide.ch6.model.LookupModel"
+    ObjectType="JboProject"/>
+</JboProject>

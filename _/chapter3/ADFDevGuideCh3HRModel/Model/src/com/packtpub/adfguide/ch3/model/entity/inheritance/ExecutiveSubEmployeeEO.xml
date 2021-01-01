@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ExecutiveSubEmployeeEO"
+  Version="11.1.2.60.81"
+  Extends="com.packtpub.adfguide.ch3.model.entity.inheritance.MarketingBaseEmployeeEO"
+  DBObjectType="TABLE"
+  DBObjectName="HR.EMPLOYEES"
+  AliasName="ExecutiveSubEmployeeEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+    RowClass="com.packtpub.adfguide.ch3.model.entity.inheritance.ExecutiveSubEmployeeEOImpl">
+    <DesignTime>
+        <Attr Name="_codeGenFlag2" Value="Access"/>
+        <Attr Name="_isCodegen" Value="true"/>
+    </DesignTime>
+    <Attribute
+      Name="Salary"
+      Precision="8"
+      Scale="2"
+      ColumnName="SALARY"
+      SQLType="NUMERIC"
+      Type="java.math.BigDecimal"
+      ColumnType="NUMBER"
+      TableName="HR.EMPLOYEES"/>
+    <Attribute
+      Name="CommissionPct"
+      Precision="2"
+      Scale="2"
+      ColumnName="COMMISSION_PCT"
+      SQLType="NUMERIC"
+      Type="java.math.BigDecimal"
+      ColumnType="NUMBER"
+      TableName="HR.EMPLOYEES"/>
+    <Attribute
+      Name="DepartmentId"
+      DiscrColumn="true"
+      DefaultValue="90"
+      Precision="4"
+      Scale="0"
+      ColumnName="DEPARTMENT_ID"
+      SQLType="NUMERIC"
+      Type="java.lang.Integer"
+      ColumnType="NUMBER"
+      TableName="HR.EMPLOYEES">
+        <DesignTime>
+            <Attr Name="_OverrideAttr" Value="true"/>
+        </DesignTime>
+    </Attribute>
+</Entity>

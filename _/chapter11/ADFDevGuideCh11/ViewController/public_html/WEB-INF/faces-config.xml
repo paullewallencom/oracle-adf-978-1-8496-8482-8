@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+  <validator>
+    <validator-id>EmailValidator</validator-id>
+    <validator-class>com.packtpub.adfguide.ch11.view.validator.EmailValidator</validator-class>
+  </validator>
+</faces-config>

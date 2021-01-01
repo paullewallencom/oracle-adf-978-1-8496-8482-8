@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="savepoint-sample-task-flow-definition">
+    <default-activity>department</default-activity>
+    <view id="department">
+      <page>/department.jsf</page>
+    </view>
+    <method-call id="hastEmployeesForDepartment">
+      <method>#{bindings.hastEmployeesForDepartment.execute}</method>
+      <return-value>#{requestScope.hasEmployees}</return-value>
+      <outcome>
+        <fixed-outcome>hastEmployees</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="createSavePoint">
+      <method>#{controllerContext.savePointManager.createSavePoint}</method>
+      <return-value>#{pageFlowScope.spEmpBeforeEdit}</return-value>
+      <outcome>
+        <fixed-outcome>postSavePoint</fixed-outcome>
+      </outcome>
+    </method-call>
+    <router id="empDisplaySwitch">
+      <case id="__5">
+        <expression>#{requestScope.hasEmployees}</expression>
+        <outcome>editEmployee</outcome>
+      </case>
+      <case id="__6">
+        <expression>#{not requestScope.hasEmployees}</expression>
+        <outcome>createEmployee</outcome>
+      </case>
+      <default-outcome>editEmployee</default-outcome>
+    </router>
+    <task-flow-call id="editEmployee">
+      <task-flow-reference>
+        <document>/WEB-INF/editEmployee.xml</document>
+        <id>editEmployee</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="createEmployee">
+      <task-flow-reference>
+        <document>/WEB-INF/createEmployee.xml</document>
+        <id>createEmployee</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <save-point-restore id="savePointRestore">
+      <save-point-id>#{pageFlowScope.spEmpBeforeEdit}</save-point-id>
+    </save-point-restore>
+    <control-flow-rule id="__1">
+      <from-activity-id>department</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>employees</from-outcome>
+        <to-activity-id>hastEmployeesForDepartment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>hastEmployeesForDepartment</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>hastEmployees</from-outcome>
+        <to-activity-id>createSavePoint</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>createSavePoint</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>postSavePoint</from-outcome>
+        <to-activity-id>empDisplaySwitch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>empDisplaySwitch</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>editEmployee</from-outcome>
+        <to-activity-id>editEmployee</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__11">
+        <from-outcome>createEmployee</from-outcome>
+        <to-activity-id>createEmployee</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>savePointRestore</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <critical/>
+  </task-flow-definition>
+</adfc-config>

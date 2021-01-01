@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ViewController"
+  Version="11.1.2.60.81"
+  SeparateXMLFiles="true"
+  PackageName="com.packtpub.adfguide.ch6.view">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../../../ViewController.jpr"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_NamedConnection" Value="HR"/>
+  </DesignTime>
+</JboProject>

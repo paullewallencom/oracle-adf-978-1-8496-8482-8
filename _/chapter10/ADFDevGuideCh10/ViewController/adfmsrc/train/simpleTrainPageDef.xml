@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.61.83" id="simpleTrainPageDef"
+                Package="train">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="empdetailtaskflowdefinition1"
+              taskFlowId="/WEB-INF/train/emp-detail-task-flow-definition.xml#emp-detail-task-flow-definition"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

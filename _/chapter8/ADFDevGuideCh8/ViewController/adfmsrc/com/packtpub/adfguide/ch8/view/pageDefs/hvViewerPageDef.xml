@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="hvViewerPageDef"
+                Package="com.packtpub.adfguide.ch8.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Departments" RangeSize="25" DataControl="HRServiceAppModuleDataControl" id="DepartmentsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DepartmentsIterator" id="Departments">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch8.model.view.DepartmentVO" Name="Departments0">
+        <AttrNames>
+          <Item Value="LocationId"/>
+          <Item Value="ManagerId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="Employees"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.packtpub.adfguide.ch8.model.view.EmployeeVO" Name="Departments1">
+        <AttrNames>
+          <Item Value="ManagerId"/>
+          <Item Value="Email"/>
+          <Item Value="JobId"/>
+          <Item Value="Salary"/>
+          <Item Value="HireDate"/>
+          <Item Value="FirstName"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="LastName"/>
+          <Item Value="EmployeeId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="clobDomainExamplePageDef"
+                Package="com.packtpub.adfguide.ch5.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FilesStorage" RangeSize="25" DataControl="HRServiceAppModuleDataControl"
+              id="FilesStorageIterator"/>
+    <searchRegion Binds="FilesStorageIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="FilesStorageQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="FilesStorageIterator" id="FilesStorage">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch5.model.view.FileStorageVO" Name="FilesStorage0">
+        <AttrNames>
+          <Item Value="FileId"/>
+          <Item Value="FileName"/>
+          <Item Value="FileContent"/>
+          <Item Value="CreatedOn"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="saveUploadedFile" RequiresUpdateModel="true" Action="invokeMethod" MethodName="saveUploadedFile"
+                  IsViewObjectMethod="false" DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider">
+      <NamedData NDName="content" NDType="oracle.jbo.domain.ClobDomain"/>
+      <NamedData NDName="filename" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

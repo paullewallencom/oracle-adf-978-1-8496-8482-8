@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGroupLayout id="pgl1">
+        <af:outputText value="#{pageFlowScope.departmentId} - #{requestScope.deptChanged}" id="ot9"/>
+        <af:table value="#{bindings.Employees.collectionModel}" var="row" rows="#{bindings.Employees.rangeSize}"
+                  emptyText="#{bindings.Employees.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.Employees.rangeSize}" rowBandingInterval="0"
+                  filterModel="#{bindings.EmployeesQuery.queryDescriptor}"
+                  queryListener="#{bindings.EmployeesQuery.processQuery}" filterVisible="true" varStatus="vs"
+                  selectedRowKeys="#{bindings.Employees.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.Employees.collectionModel.makeCurrent}" rowSelection="single" id="t1">
+            <af:column sortProperty="#{bindings.Employees.hints.EmployeeId.name}" filterable="true" sortable="true"
+                       headerText="#{bindings.Employees.hints.EmployeeId.label}" id="c1">
+                <af:outputText value="#{row.EmployeeId}" id="ot1">
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Employees.hints.EmployeeId.format}"/>
+                </af:outputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.Employees.hints.FirstName.name}" filterable="true" sortable="true"
+                       headerText="#{bindings.Employees.hints.FirstName.label}" id="c2">
+                <af:outputText value="#{row.FirstName}" id="ot2"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.Employees.hints.LastName.name}" filterable="true" sortable="true"
+                       headerText="#{bindings.Employees.hints.LastName.label}" id="c3">
+                <af:outputText value="#{row.LastName}" id="ot3"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.Employees.hints.Email.name}" filterable="true" sortable="true"
+                       headerText="#{bindings.Employees.hints.Email.label}" id="c4">
+                <af:outputText value="#{row.Email}" id="ot4"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.Employees.hints.PhoneNumber.name}" filterable="true" sortable="true"
+                       headerText="#{bindings.Employees.hints.PhoneNumber.label}" id="c5">
+                <af:outputText value="#{row.PhoneNumber}" id="ot5"/>
+            </af:column>
+        </af:table>
+    </af:panelGroupLayout>
+</ui:composition>

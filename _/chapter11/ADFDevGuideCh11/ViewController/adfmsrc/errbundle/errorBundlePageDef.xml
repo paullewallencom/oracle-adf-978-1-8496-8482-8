@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="errorBundlePageDef"
+                Package="errbundle">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="doSomethingAndThrowBundleOfExceptions" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSomethingAndThrowBundleOfExceptions" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"/>
+    <methodAction id="doSomethingAndThrowBundleOfWarnings" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSomethingAndThrowBundleOfWarnings" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

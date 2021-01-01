@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.62.11" id="empTrainPageDef"
+                Package="train">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeesForDepartment" RangeSize="25" DataControl="HRServiceAppModuleDataControl"
+              id="EmployeesForDepartmentIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EmployeesForDepartmentIterator" id="EmployeesForDepartment">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch9.model.view.EmployeeVO" Name="EmployeesForDepartment0">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="dynamicUI-task-flow-definition">
+    <default-activity>buildDynamicDeptViewCompAndAddtoAM</default-activity>
+    <method-call id="buildDynamicDeptViewCompAndAddtoAM">
+      <method>#{bindings.buildDynamicDeptViewCompAndAddtoAM.execute}</method>
+      <outcome>
+        <fixed-outcome>buildDynamicDeptViewCompAndAddtoAM</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="dynamicDeptUI">
+      <page>/dynamicDeptUI.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>buildDynamicDeptViewCompAndAddtoAM</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>buildDynamicDeptViewCompAndAddtoAM</from-outcome>
+        <to-activity-id>dynamicDeptUI</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="mulitTaskFlow.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout id="pgl1" partialTriggers="b1">
+                <af:commandButton text="Add Task Flows" id="b1"
+                                  actionListener="#{pageFlowScope.MultiTaskflowBean.addTaskFlows}"
+                                  partialSubmit="true"/>
+                <af:forEach var="tf" items="#{bindings.multiRegion1.taskFlowBindingList}">
+                    <af:region value="#{tf.regionModel}" id="reg#{tf.name}"/>
+                    <af:separator id="s2"/>
+                </af:forEach>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

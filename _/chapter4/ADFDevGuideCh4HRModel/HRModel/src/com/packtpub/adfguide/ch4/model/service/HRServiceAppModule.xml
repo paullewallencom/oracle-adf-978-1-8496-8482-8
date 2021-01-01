@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRServiceAppModule"
+  Version="11.1.2.60.81"
+  ClearCacheOnRollback="true"
+  ComponentClass="com.packtpub.adfguide.ch4.model.service.HRServiceAppModuleImpl"
+  ComponentInterface="com.packtpub.adfguide.ch4.model.service.common.HRServiceAppModule"
+  ClientProxyName="com.packtpub.adfguide.ch4.model.service.client.HRServiceAppModuleClient">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="Departments"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.DepartmentVO"/>
+  <ViewUsage
+    Name="EmployeesForDepartment"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.EmployeeVO"/>
+  <ViewUsage
+    Name="Employees"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.EmployeeVO"/>
+  <ViewUsage
+    Name="MarketingEmployeeList"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.MarketingEmployeeListVO"/>
+  <ViewUsage
+    Name="EmployeeDeptDetails"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.EmployeeDeptVO"/>
+  <ViewUsage
+    Name="Countries"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.CountryVO"/>
+  <ViewUsage
+    Name="Locations"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.LocationVO"/>
+  <ViewUsage
+    Name="LocationDetails"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.LocationVO"/>
+  <ViewUsage
+    Name="JobHistoryDetails"
+    ViewObjectName="com.packtpub.adfguide.ch4.model.view.JobHistoryVO"/>
+  <ViewLinkUsage
+    Name="EmpDeptFkLink1"
+    ViewLinkObjectName="com.packtpub.adfguide.ch4.model.view.link.EmpDeptFkLink"
+    SrcViewUsageName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule.Departments"
+    DstViewUsageName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule.EmployeesForDepartment"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CountryLocFkLink1"
+    ViewLinkObjectName="com.packtpub.adfguide.ch4.model.view.link.CountryLocFkLink"
+    SrcViewUsageName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule.Countries"
+    DstViewUsageName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule.Locations"
+    Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="test"
+      MethodName="test">
+      <Return
+        Type="void"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

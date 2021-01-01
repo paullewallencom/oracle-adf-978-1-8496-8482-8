@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProgrammaticallyManagedEmployeeEO"
+  Version="11.1.2.60.17"
+  DBObjectType="table"
+  DBObjectName="HR.PROGRAMMATICALLYMANAGEDEMPLOYE"
+  AliasName="ProgrammaticallyManagedEmplo1"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.ProgrammaticallyManagedEmployeeEOImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_superClass" Value="fmwk.extension.entity.ProgrammaticallyManagedEntityObjectImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="EmployeeId"
+    IsUpdateable="while_insert"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HR.PROGRAMMATICALLYMANAGEDEMPLOYE"
+    PrimaryKey="true">
+    <validation:CompareValidationBean
+      Name="EmployeeId_Rule_0"
+      ResId="model.ProgrammaticallyManagedEmployeeEO.EmployeeId_Rule_0"
+      OnAttribute="EmployeeId"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="0"/>
+  </Attribute>
+  <Attribute
+    Name="FirstName"
+    Precision="80"
+    ColumnName="FIRST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR.PROGRAMMATICALLYMANAGEDEMPLOYE"/>
+  <Attribute
+    Name="LastName"
+    Precision="80"
+    ColumnName="LAST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR.PROGRAMMATICALLYMANAGEDEMPLOYE"/>
+  <Attribute
+    Name="Email"
+    Precision="80"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR.PROGRAMMATICALLYMANAGEDEMPLOYE"/>
+  <Attribute
+    Name="DepartmentId"
+    ColumnName="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="HR.PROGRAMMATICALLYMANAGEDEMPLOYE"/>
+  <Key
+    Name="HrProgrammaticallymanagedemployeEmployeeIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="HR_PROGRAMMATICALLYMANAGEDEMPL"/>
+      <Attr Name="_checkCondition" Value='"EMPLOYEE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ProgrammaticallyManagedEmployeeEO.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProgrammaticallymanagedemployeeeoPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PROGRAMMATICALLYMANAGEDEMPLOYE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ProgrammaticallyManagedEmployeeEO.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

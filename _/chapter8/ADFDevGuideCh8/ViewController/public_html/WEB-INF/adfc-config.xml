@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="mainView">
+    <page>/searchSourceView.jsf</page>
+  </view>
+  <method-call id="initSessionWithUserLoc">
+    <method>#{bindings.initSessionWithUserLoc.execute}</method>
+    <outcome>
+      <fixed-outcome>initSessionWithUserLoc</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="searchView">
+    <page>/searchView.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>mainView</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>department</from-outcome>
+      <to-activity-id>initSessionWithUserLoc</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>initSessionWithUserLoc</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>initSessionWithUserLoc</from-outcome>
+      <to-activity-id>searchView</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__5">
+    <managed-bean-name>TreeBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch8.view.TreeBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>SearchBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch8.view.SearchBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>DepartmentBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch8.view.DepartmentBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name>backing_mulitSelect</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch8.view.backing.MulitSelect</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1mulitSelect.jsf-->
+  </managed-bean>
+  <managed-bean id="__9">
+    <managed-bean-name>MulitSelectBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch8.view.MulitSelectBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

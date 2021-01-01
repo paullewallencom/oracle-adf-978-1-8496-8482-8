@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="search.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="departmentsFindAll" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.DepartmentsCriteriaQuery.queryDescriptor}"
+                              model="#{bindings.DepartmentsCriteriaQuery.queryModel}"
+                              queryListener="#{bindings.DepartmentsCriteriaQuery.processQuery}"
+                              queryOperationListener="#{bindings.DepartmentsCriteriaQuery.processQueryOperation}"
+                              resultComponentId="::resId1"/>
+                </af:panelHeader>
+                <af:table value="#{bindings.departmentsFindAll.collectionModel}" var="row"
+                          rows="#{bindings.departmentsFindAll.rangeSize}"
+                          emptyText="#{bindings.departmentsFindAll.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.departmentsFindAll.rangeSize}" rowBandingInterval="0" id="resId1">
+                    <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentId.name}" sortable="false"
+                               headerText="#{bindings.departmentsFindAll.hints.departmentId.label}" id="resId1c1">
+                        <af:outputText value="#{row.departmentId}" id="ot1"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.departmentsFindAll.hints.departmentName.name}" sortable="false"
+                               headerText="#{bindings.departmentsFindAll.hints.departmentName.label}" id="resId1c2">
+                        <af:outputText value="#{row.departmentName}" id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.departmentsFindAll.hints.locationId.name}" sortable="false"
+                               headerText="#{bindings.departmentsFindAll.hints.locationId.label}" id="resId1c3">
+                        <af:outputText value="#{row.locationId}" id="ot3"/>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="dept-ce-task-flow-definition">
+    <default-activity>deptce</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <view id="deptce">
+      <page>/contextualevent/deptce.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="11.1.2.60.81" id="DataControls"
+                    Package="com.packtpub.adfguide.ch12.model.ejb">
+  <AdapterDataControl id="HRServiceSessionEJBLocal" FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.ejb.EjbDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.packtpub.adfguide.ch12.model.ejb.HRServiceSessionEJBLocal"
+                      BeanClass="com.packtpub.adfguide.ch12.model.ejb.HRServiceSessionEJBLocal"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.packtpub.adfguide.ch12.model.ejb.Employees"/>
+      <TypeInfo FullName="com.packtpub.adfguide.ch12.model.ejb.Departments"/>
+    </CreatableTypes>
+    <Source>
+      <ejb-definition ejb-version="3.0" ejb-name="HRServiceSessionEJB" ejb-type="Session"
+                      ejb-business-interface="com.packtpub.adfguide.ch12.model.ejb.HRServiceSessionEJBLocal"
+                      ejb-interface-type="local" initial-context-factory="weblogic.jndi.WLInitialContextFactory"
+                      DataControlHandler="oracle.adf.model.adapter.bean.jpa.JPQLDataFilterHandler"
+                      xmlns="http://xmlns.oracle.com/adfm/adapter/ejb"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

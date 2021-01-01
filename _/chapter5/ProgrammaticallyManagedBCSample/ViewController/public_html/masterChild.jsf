@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="masterChild.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="DepartmentVO" id="ph1">
+                    <af:panelFormLayout id="pfl1">
+                        <af:panelLabelAndMessage label="#{bindings.DepartmentId.hints.label}" id="plam1">
+                            <af:outputText value="#{bindings.DepartmentId.inputValue}" id="ot1">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.DepartmentName.hints.label}" id="plam2">
+                            <af:outputText value="#{bindings.DepartmentName.inputValue}" id="ot2"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.ManagerId.hints.label}" id="plam3">
+                            <af:outputText value="#{bindings.ManagerId.inputValue}" id="ot3">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.LocationId.hints.label}" id="plam4">
+                            <af:outputText value="#{bindings.LocationId.inputValue}" id="ot4">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationId.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <f:facet name="footer">
+                            <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                <f:facet name="separator">
+                                    <af:spacer width="10" height="1" id="s1"/>
+                                </f:facet>
+                                <af:commandButton actionListener="#{bindings.First.execute}" text="First"
+                                                  disabled="#{!bindings.First.enabled}" partialSubmit="true" id="cb1"/>
+                                <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                  disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                  id="cb2"/>
+                                <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                                                  disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="cb3"/>
+                                <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                                                  disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="cb4"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelFormLayout>
+                </af:panelHeader>
+                <af:panelHeader text="ProgrammaticallyManagedEmployeeVO" id="ph2">
+                    <af:table rows="#{bindings.ProgrammaticallyManagedEmployeeVO2.rangeSize}"
+                              fetchSize="#{bindings.ProgrammaticallyManagedEmployeeVO2.rangeSize}"
+                              emptyText="#{bindings.ProgrammaticallyManagedEmployeeVO2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              var="row" value="#{bindings.ProgrammaticallyManagedEmployeeVO2.collectionModel}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ProgrammaticallyManagedEmployeeVO2.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ProgrammaticallyManagedEmployeeVO2.collectionModel.makeCurrent}"
+                              rowSelection="single" id="t1">
+                        <af:column headerText="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.EmployeeId.label}"
+                                   sortProperty="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.EmployeeId.name}"
+                                   sortable="false" id="c1">
+                            <af:outputText value="#{row.EmployeeId}" id="ot5">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.EmployeeId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                         
+                        <af:column headerText="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.FirstName.label}"
+                                   sortProperty="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.FirstName.name}"
+                                   sortable="false" id="c2">
+                            <af:outputText value="#{row.FirstName}" id="ot6"/>
+                        </af:column>
+                         
+                        <af:column headerText="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.LastName.label}"
+                                   sortProperty="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.LastName.name}"
+                                   sortable="false" id="c3">
+                            <af:outputText value="#{row.LastName}" id="ot7"/>
+                        </af:column>
+                         
+                        <af:column headerText="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.Email.label}"
+                                   sortProperty="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.Email.name}"
+                                   sortable="false" id="c4">
+                            <af:outputText value="#{row.Email}" id="ot8"/>
+                        </af:column>
+                         
+                        <af:column headerText="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.DepartmentId.label}"
+                                   sortProperty="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.DepartmentId.name}"
+                                   sortable="false" id="c5">
+                            <af:outputText value="#{row.DepartmentId}" id="ot9">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ProgrammaticallyManagedEmployeeVO2.hints.DepartmentId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
+                </af:panelHeader>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

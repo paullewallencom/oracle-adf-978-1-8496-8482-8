@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<DepartmentVO>
+   <DepartmentVORow>
+      <DepartmentId>10</DepartmentId>
+      <DepartmentName>Administration1</DepartmentName>
+      <ManagerId>200</ManagerId>
+      <LocationId>1800</LocationId>
+      <EmployeeVO>
+         <EmployeeVORow>
+            <EmployeeId>222</EmployeeId>
+            <FirstName>Dummy</FirstName>
+            <LastName>Employee</LastName>
+            <Email>dummy@dummy.com</Email>
+            <HireDate>2010-05-14</HireDate>
+            <JobId>AD_ASST</JobId>
+            <ManagerId>200</ManagerId>
+            <DepartmentId>10</DepartmentId>
+         </EmployeeVORow>
+      </EmployeeVO>
+   </DepartmentVORow>
+   <DepartmentVORow bc4j-action='remove'>
+      <DepartmentId>99</DepartmentId>
+      <DepartmentName>IT Security</DepartmentName>
+      <ManagerId>112</ManagerId>
+      <LocationId>1700</LocationId>
+   </DepartmentVORow>
+</DepartmentVO>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="mulitSelectPageDef"
+                Package="com.packtpub.adfguide.ch8.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Departments" RangeSize="25" DataControl="HRServiceAppModuleDataControl" id="DepartmentsIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="DepartmentsIterator" ListOperMode="multiSelect" ListIter="DepartmentsIterator" id="Departments"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="DepartmentName"/>
+      </ListDisplayAttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

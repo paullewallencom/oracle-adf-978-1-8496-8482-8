@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountryEO"
+  Version="11.1.2.60.81"
+  DBObjectType="TABLE"
+  DBObjectName="HR.COUNTRIES"
+  AliasName="CountryEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="CountryId"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="COUNTRY_ID"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="HR.COUNTRIES"
+    PrimaryKey="true"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CountryName"
+    Precision="40"
+    ColumnName="COUNTRY_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR.COUNTRIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RegionId"
+    ColumnName="REGION_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="HR.COUNTRIES"/>
+  <Key
+    Name="CountryCIdPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="COUNTRY_C_ID_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch5.model.entity.CountryEO.CountryId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="CountrRegFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="REG_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="COUNTR_REG_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch5.model.entity.CountryEO.RegionId"/>
+    </AttrArray>
+  </Key>
+</Entity>

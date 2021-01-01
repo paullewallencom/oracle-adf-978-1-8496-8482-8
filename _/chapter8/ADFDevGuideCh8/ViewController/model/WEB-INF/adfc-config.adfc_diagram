@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View3">
+      <property
+         name="activityId">mainView</property>
+      <property
+         name="page">/searchSourceView.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>mainView&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">208.79883</property>
+      <property
+         name="x">107.5</property>
+   </View>
+   <MethodCall
+      id="MethodCall4">
+      <property
+         name="activityId">initSessionWithUserLoc</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>initSessionWithUserLoc&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">208.74707</property>
+      <property
+         name="x">318.35742</property>
+   </MethodCall>
+   <View
+      id="View5">
+      <property
+         name="activityId">searchView</property>
+      <property
+         name="page">/searchView.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>searchView&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">359.89062</property>
+      <property
+         name="x">318.01367</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View3"
+      to="MethodCall4">
+      <property
+         name="fromOutcome">department</property>
+      <property
+         name="sdm:polyPoints">R50,148.5,208.44824,277.35742,208.39648,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="MethodCall4"
+      to="View5">
+      <property
+         name="fromOutcome">initSessionWithUserLoc</property>
+      <property
+         name="sdm:polyPoints">B50,318.35742,262.39648,318.01367,305.54004,T50</property>
+   </ControlFlowCase>
+</SDM>

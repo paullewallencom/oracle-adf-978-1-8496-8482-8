@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Departments">
+  <DesignTime>
+    <Attr Name="_DCName" Value="com.packtpub.adfguide.ch12.model.ejb.DataControls.HRServiceSessionEJBLocal"/>
+    <Attr Name="_SDName" Value="com.packtpub.adfguide.ch12.model.ejb.Departments"/>
+  </DesignTime>
+  <ViewCriteria
+    Name="DepartmentsCriteria"
+    ViewObjectName="com.packtpub.adfguide.ch12.model.ejb.Departments"
+    Conjunction="AND"
+    Mode="2">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="DepartmentsCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="DepartmentsCriteria_DepartmentsCriteria_row_0_departmentId"
+        ViewAttribute="departmentId"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DepartmentsCriteria_DepartmentsCriteria_row_0_departmentName"
+        ViewAttribute="departmentName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DepartmentsCriteria_DepartmentsCriteria_row_0_locationId"
+        ViewAttribute="locationId"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+</PDefViewObject>

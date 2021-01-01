@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.17" id="mainPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <multiTaskFlow id="multiRegion1" taskFlowList="#{pageFlowScope.MainBean.taskFlowBindings}"
+                   xmlns="http://xmlns.oracle.com/adf/controller/binding" activation="deferred"/>
+   
+  </executables>
+  <bindings/>
+</pageDefinition>

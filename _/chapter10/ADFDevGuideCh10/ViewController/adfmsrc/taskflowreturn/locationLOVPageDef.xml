@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.62.11" id="locationLOVPageDef"
+                Package="taskflowreturn">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Locations" RangeSize="25" DataControl="HRServiceAppModuleDataControl" id="LocationsIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="LocationsIterator" id="Locations">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch9.model.view.LocationVO" Name="Locations0">
+        <AttrNames>
+          <Item Value="LocationId"/>
+          <Item Value="StreetAddress"/>
+          <Item Value="PostalCode"/>
+          <Item Value="City"/>
+          <Item Value="StateProvince"/>
+          <Item Value="CountryId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="LocationsIterator" id="LocationId">
+      <AttrNames>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

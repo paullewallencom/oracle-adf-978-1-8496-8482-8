@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="treePageDef" Package="tree">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HRServiceSessionEJBLocal" id="HRServiceSessionEJBLocalIterator"/>
+    <accessorIterator MasterBinding="HRServiceSessionEJBLocalIterator" Binds="departmentsFindAll" RangeSize="25"
+                      DataControl="HRServiceSessionEJBLocal"
+                      BeanClass="com.packtpub.adfguide.ch12.model.ejb.Departments" id="departmentsFindAllIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="departmentsFindAllIterator" id="departmentsFindAll">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch12.model.ejb.Departments" Name="departmentsFindAll0">
+        <AttrNames>
+          <Item Value="departmentId"/>
+          <Item Value="departmentName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="employeesList"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.packtpub.adfguide.ch12.model.ejb.Employees" Name="departmentsFindAll1">
+        <AttrNames>
+          <Item Value="commissionPct"/>
+          <Item Value="firstName"/>
+          <Item Value="lastName"/>
+          <Item Value="email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

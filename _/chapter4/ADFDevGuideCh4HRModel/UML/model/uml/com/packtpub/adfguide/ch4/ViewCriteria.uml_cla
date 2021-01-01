@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:0a40d4a9-b9ef-411f-9466-d7c52cb63a23'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='ViewCriteria'
+   visibility='public'/>
+</xmi:XMI>

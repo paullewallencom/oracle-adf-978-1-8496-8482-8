@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="programmaticVO.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:commandButton actionListener="#{bindings.Commit.execute}" text="Commit"
+                                  id="cb1"/>
+                <af:panelHeader text="DepartmentProgrammaticVO" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.DepartmentProgrammaticVOCriteriaQuery.queryDescriptor}"
+                              model="#{bindings.DepartmentProgrammaticVOCriteriaQuery.queryModel}"
+                              queryListener="#{bindings.DepartmentProgrammaticVOCriteriaQuery.processQuery}"
+                              queryOperationListener="#{bindings.DepartmentProgrammaticVOCriteriaQuery.processQueryOperation}"/>
+                </af:panelHeader>
+                <af:table value="#{bindings.DepartmentProgrammaticVO.collectionModel}" var="row"
+                          rows="#{bindings.DepartmentProgrammaticVO.rangeSize}"
+                          emptyText="#{bindings.DepartmentProgrammaticVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.DepartmentProgrammaticVO.rangeSize}" rowBandingInterval="0"
+                          filterModel="#{bindings.DepartmentProgrammaticVOCriteriaQuery.queryDescriptor}"
+                          queryListener="#{bindings.DepartmentProgrammaticVOCriteriaQuery.processQuery}"
+                          filterVisible="true" varStatus="vs"
+                          selectedRowKeys="#{bindings.DepartmentProgrammaticVO.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.DepartmentProgrammaticVO.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t1">
+                    <af:column sortProperty="#{bindings.DepartmentProgrammaticVO.hints.DepartmentId.name}"
+                               sortable="true"
+                               headerText="#{bindings.DepartmentProgrammaticVO.hints.DepartmentId.label}" id="c1">
+                        <af:inputText value="#{row.bindings.DepartmentId.inputValue}"
+                                      label="#{bindings.DepartmentProgrammaticVO.hints.DepartmentId.label}"
+                                      required="#{bindings.DepartmentProgrammaticVO.hints.DepartmentId.mandatory}"
+                                      columns="#{bindings.DepartmentProgrammaticVO.hints.DepartmentId.displayWidth}"
+                                      maximumLength="#{bindings.DepartmentProgrammaticVO.hints.DepartmentId.precision}"
+                                      shortDesc="#{bindings.DepartmentProgrammaticVO.hints.DepartmentId.tooltip}"
+                                      id="it1">
+                            <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentProgrammaticVO.hints.DepartmentId.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.DepartmentProgrammaticVO.hints.DepartmentName.name}"
+                               sortable="true"
+                               headerText="#{bindings.DepartmentProgrammaticVO.hints.DepartmentName.label}" id="c2">
+                        <af:inputText value="#{row.bindings.DepartmentName.inputValue}"
+                                      label="#{bindings.DepartmentProgrammaticVO.hints.DepartmentName.label}"
+                                      required="#{bindings.DepartmentProgrammaticVO.hints.DepartmentName.mandatory}"
+                                      columns="#{bindings.DepartmentProgrammaticVO.hints.DepartmentName.displayWidth}"
+                                      maximumLength="#{bindings.DepartmentProgrammaticVO.hints.DepartmentName.precision}"
+                                      shortDesc="#{bindings.DepartmentProgrammaticVO.hints.DepartmentName.tooltip}"
+                                      id="it2">
+                            <f:validator binding="#{row.bindings.DepartmentName.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.DepartmentProgrammaticVO.hints.ManagerId.name}" sortable="true"
+                               headerText="#{bindings.DepartmentProgrammaticVO.hints.ManagerId.label}" id="c3">
+                        <af:inputText value="#{row.bindings.ManagerId.inputValue}"
+                                      label="#{bindings.DepartmentProgrammaticVO.hints.ManagerId.label}"
+                                      required="#{bindings.DepartmentProgrammaticVO.hints.ManagerId.mandatory}"
+                                      columns="#{bindings.DepartmentProgrammaticVO.hints.ManagerId.displayWidth}"
+                                      maximumLength="#{bindings.DepartmentProgrammaticVO.hints.ManagerId.precision}"
+                                      shortDesc="#{bindings.DepartmentProgrammaticVO.hints.ManagerId.tooltip}" id="it3">
+                            <f:validator binding="#{row.bindings.ManagerId.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentProgrammaticVO.hints.ManagerId.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.DepartmentProgrammaticVO.hints.LocationId.name}" sortable="true"
+                               headerText="#{bindings.DepartmentProgrammaticVO.hints.LocationId.label}" id="c4">
+                        <af:inputText value="#{row.bindings.LocationId.inputValue}"
+                                      label="#{bindings.DepartmentProgrammaticVO.hints.LocationId.label}"
+                                      required="#{bindings.DepartmentProgrammaticVO.hints.LocationId.mandatory}"
+                                      columns="#{bindings.DepartmentProgrammaticVO.hints.LocationId.displayWidth}"
+                                      maximumLength="#{bindings.DepartmentProgrammaticVO.hints.LocationId.precision}"
+                                      shortDesc="#{bindings.DepartmentProgrammaticVO.hints.LocationId.tooltip}"
+                                      id="it4">
+                            <f:validator binding="#{row.bindings.LocationId.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentProgrammaticVO.hints.LocationId.format}"/>
+                        </af:inputText>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

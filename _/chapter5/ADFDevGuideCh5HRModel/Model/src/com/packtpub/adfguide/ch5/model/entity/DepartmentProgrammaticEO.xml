@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentProgrammaticEO"
+  Version="11.1.2.60.81"
+  AliasName="DepartmentProgrammaticEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.packtpub.adfguide.ch5.model.entity.DepartmentProgrammaticEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="DepartmentId"
+    IsUpdateable="while_insert"
+    IsQueriable="true"
+    IsNotNull="true"
+    ColumnName="DEPARTMENTID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="$none$"
+    PrimaryKey="true"
+    IsPersistent="false"/>
+  <Attribute
+    Name="DepartmentName"
+    IsQueriable="true"
+    ColumnName="$none$"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="$none$"
+    IsPersistent="false"/>
+  <Attribute
+    Name="ManagerId"
+    IsQueriable="true"
+    IsPersistent="false"
+    ColumnName="$none$"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="$none$"/>
+  <Attribute
+    Name="LocationId"
+    IsQueriable="true"
+    ColumnName="$none$"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="$none$"
+    IsPersistent="false"/>
+</Entity>

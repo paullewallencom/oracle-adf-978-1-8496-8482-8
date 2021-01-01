@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81"
+                id="adfc_config___methodThrowingErrorPageDef" Package="com.packtpub.adfguide.ch11.view.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <action id="methodThrowingError" RequiresUpdateModel="true" Action="invokeMethod" MethodName="methodThrowingError"
+            IsViewObjectMethod="false" DataControl="HRServiceAppModuleDataControl"
+            InstanceName="data.HRServiceAppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="tree.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:tree value="#{bindings.departmentsFindAll.treeModel}" var="node"
+                     selectionListener="#{bindings.departmentsFindAll.treeModel.makeCurrent}" rowSelection="single"
+                     id="t1">
+                <f:facet name="nodeStamp">
+                    <af:outputText value="#{node}" id="ot1"/>
+                </f:facet>
+            </af:tree>
+        </af:form>
+    </af:document>
+</f:view>

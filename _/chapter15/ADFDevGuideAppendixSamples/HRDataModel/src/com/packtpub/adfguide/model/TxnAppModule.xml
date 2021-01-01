@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TxnAppModule"
+  Version="11.1.2.61.83"
+  ClearCacheOnRollback="true"
+  ComponentClass="com.packtpub.adfguide.model.TxnAppModuleImpl"
+  ComponentInterface="com.packtpub.adfguide.model.common.TxnAppModule"
+  ClientProxyName="com.packtpub.adfguide.model.client.TxnAppModuleClient">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.packtpub.adfguide.model.TxnAppModule_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="Employees"
+    ViewObjectName="com.packtpub.adfguide.model.EmployeeVO"/>
+  <ViewUsage
+    Name="EmployeeUpdatableVO1"
+    ViewObjectName="com.packtpub.adfguide.model.EmployeeUpdatableVO"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.packtpub.adfguide.model.HRDataModelBundle"/>
+  </ResourceBundle>
+  <ClientInterface>
+    <Method
+      Name="updateEmployee"
+      MethodName="updateEmployee">
+      <Return
+        Type="void"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.61.83" id="dynamicVOEOExamplePageDef"
+                Package="com.packtpub.adfguide.ch5.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="buildDynamicDeptViewCompAndAddtoAM" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="buildDynamicDeptViewCompAndAddtoAM" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

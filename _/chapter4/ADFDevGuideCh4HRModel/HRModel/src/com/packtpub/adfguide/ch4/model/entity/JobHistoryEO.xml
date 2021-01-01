@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="JobHistoryEO"
+  Version="11.1.2.60.81"
+  DBObjectType="TABLE"
+  DBObjectName="HR.JOB_HISTORY"
+  AliasName="JobHistoryEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  EffectiveDateType="EffectiveDated">
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    Precision="6"
+    Scale="0"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="HR.JOB_HISTORY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="StartDate"
+    IsNotNull="true"
+    ColumnName="START_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="HR.JOB_HISTORY"
+    PrimaryKey="true"
+    IsEffectiveStartDate="true"/>
+  <Attribute
+    Name="EndDate"
+    IsNotNull="true"
+    ColumnName="END_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="HR.JOB_HISTORY"
+    IsEffectiveEndDate="true"/>
+  <Attribute
+    Name="JobId"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="JOB_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR.JOB_HISTORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DepartmentId"
+    Precision="4"
+    Scale="0"
+    ColumnName="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="HR.JOB_HISTORY"/>
+  <Attribute
+    Name="SysEffectiveDate"
+    IsQueriable="false"
+    IsPersistent="false"
+    ColumnName="$none$"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="$none$"/>
+  <AccessorAttribute
+    Name="ExecutiveEmployeeExEO"
+    Association="JhistEmpFkAssoc1"
+    AssociationEnd="JhistEmpFkAssoc1.ExecutiveEmployeeExEO"
+    AssociationOtherEnd="JhistEmpFkAssoc1.destEnd"
+    Type="com.packtpub.adfguide.ch4.model.entity.ExecutiveEmployeeExEOImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SalesEmployeeExEO"
+    Association="JhistEmpFkAssoc2"
+    AssociationEnd="JhistEmpFkAssoc2.SalesEmployeeExEO"
+    AssociationOtherEnd="JhistEmpFkAssoc2.destEnd"
+    Type="com.packtpub.adfguide.ch4.model.entity.SalesEmployeeExEOImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="EmployeeEO"
+    Association="com.packtpub.adfguide.ch4.model.entity.JhistEmpFkAssoc3"
+    AssociationEnd="com.packtpub.adfguide.ch4.model.entity.JhistEmpFkAssoc3.EmployeeEO"
+    AssociationOtherEnd="com.packtpub.adfguide.ch4.model.entity.JhistEmpFkAssoc3.JobHistoryEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="JhistEmpIdStDatePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="JHIST_EMP_ID_ST_DATE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch4.model.entity.JobHistoryEO.EmployeeId"/>
+      <Item Value="com.packtpub.adfguide.ch4.model.entity.JobHistoryEO.StartDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="JhistDeptFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DEPT_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="JHIST_DEPT_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch4.model.entity.JobHistoryEO.DepartmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="JhistEmpFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EMP_EMP_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="JHIST_EMP_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch4.model.entity.JobHistoryEO.EmployeeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="JhistJobFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="JOB_ID_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="JHIST_JOB_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch4.model.entity.JobHistoryEO.JobId"/>
+    </AttrArray>
+  </Key>
+</Entity>

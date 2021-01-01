@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.2.62.11" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.packtpub.adfguide.ch9.view" ClientType="Generic">
+    <definitionFactories>
+        <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+                 className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+        <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+        <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+                 className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+    </definitionFactories>
+    <pageMap>
+        <page path="/multitaskflow/mulitTaskFlow.jsf" usageId="com_packtpub_adfguide_ch9_view_mulitTaskFlowPageDef"/>
+        <page path="/multitaskflow/dept.jsff" usageId="com_packtpub_adfguide_ch9_view_deptPageDef"/>
+        <page path="/multitaskflow/emp.jsff" usageId="com_packtpub_adfguide_ch9_view_empPageDef"/>
+        <page path="/WEB-INF/multitaskflow/emp-task-flow-definition.xml#emp-task-flow-definition@ExecuteWithParams"
+              usageId="com_packtpub_adfguide_ch9_view_emp_task_flow_definition_emp_task_flow_definition_ExecuteWithParamsPageDef"/>
+        <page path="/dynamic/dynamicTaskFlow.jsf" usageId="com_packtpub_adfguide_ch9_view_dynamicTaskFlowPageDef"/>
+        <page path="/dynamic/empSummary.jsff" usageId="com_packtpub_adfguide_ch9_view_empSummaryPageDef"/>
+        <page path="/WEB-INF/dynamic/emp-summary-task-flow-definition.xml#emp-summary-task-flow-definition@ExecuteWithParams"
+              usageId="com_packtpub_adfguide_ch9_view_emp_summary_task_flow_definition_emp_summary_task_flow_definition_ExecuteWithParamsPageDef"/>
+        <page path="/dynamic/empDetail.jsff" usageId="com_packtpub_adfguide_ch9_view_empDetailPageDef"/>
+        <page path="/WEB-INF/dynamic/emp-detail-task-flow-definition.xml#emp-detail-task-flow-definition@ExecuteWithParams"
+              usageId="com_packtpub_adfguide_ch9_view_emp_detail_task_flow_definition_emp_detail_task_flow_definition_ExecuteWithParamsPageDef"/>
+        <page path="/taskflowreturn/locationLOV.jsf" usageId="com_packtpub_adfguide_ch9_view_locationLOVPageDef"/>
+        <page path="/taskflowreturn/deptUsingTaskflowLOV.jsf"
+              usageId="com_packtpub_adfguide_ch9_view_deptWithTaskflowLOVPageDef"/>
+        <page path="/contextualevent/deptce.jsff" usageId="com_packtpub_adfguide_ch9_view_deptcePageDef"/>
+        <page path="/contextualevent/empce.jsff" usageId="com_packtpub_adfguide_ch9_view_empcePageDef"/>
+        <page path="/contextualevent/ceMain.jsf" usageId="com_packtpub_adfguide_ch9_view_ceMainPageDef"/>
+        <page path="/train/deptTrain.jsff" usageId="com_packtpub_adfguide_ch9_view_deptTrainPageDef"/>
+        <page path="/train/empTrain.jsff" usageId="com_packtpub_adfguide_ch9_view_empTrainPageDef"/>
+        <page path="/train/summaryTrain.jsff" usageId="com_packtpub_adfguide_ch9_view_summaryTrainPageDef"/>
+        <page path="/train/empDetail1.jsff" usageId="com_packtpub_adfguide_ch9_view_empDetail1PageDef"/>
+        <page path="/train/empDetail2.jsff" usageId="com_packtpub_adfguide_ch9_view_empDetail2PageDef"/>
+        <page path="/train/trainNavigation.jsf" usageId="com_packtpub_adfguide_ch9_view_trainTestPageDef"/>
+        <page path="/WEB-INF/train/dept-emp-train-task-flow-definition.xml#dept-emp-train-task-flow-definition@hasMinumumEmployees"
+              usageId="com_packtpub_adfguide_ch9_view_dept_emp_train_task_flow_definition_dept_emp_train_task_flow_definition_hasMinumumEmployeesPageDef"/>
+        <page path="/WEB-INF/train/dept-emp-train-task-flow-definition.xml#dept-emp-train-task-flow-definition@router"
+              usageId="com_packtpub_adfguide_ch9_view_dept_emp_train_task_flow_definition_dept_emp_train_task_flow_definition_routerPageDef"/>
+        <page path="/main.jsf" usageId="com_packtpub_adfguide_ch9_view_mainPageDef"/>
+        <page path="/train/simpleTrain.jsf" usageId="com_packtpub_adfguide_ch9_view_simpleTrainPageDef"/>
+    </pageMap>
+    <pageDefinitionUsages>
+        <page id="com_packtpub_adfguide_ch9_view_mulitTaskFlowPageDef"
+              path="com.packtpub.adfguide.ch9.view.pageDefs.mulitTaskFlowPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_deptPageDef"
+              path="com.packtpub.adfguide.ch9.view.pageDefs.deptPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_empPageDef" path="com.packtpub.adfguide.ch9.view.pageDefs.empPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_emp_task_flow_definition_emp_task_flow_definition_ExecuteWithParamsPageDef"
+              path="com.packtpub.adfguide.ch9.view.pageDefs.emp_task_flow_definition_emp_task_flow_definition_ExecuteWithParamsPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_dynamicTaskFlowPageDef"
+              path="com.packtpub.adfguide.ch9.view.pageDefs.dynamicTaskFlowPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_empSummaryPageDef" path="dynamic.empSummaryPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_emp_summary_task_flow_definition_emp_summary_task_flow_definition_ExecuteWithParamsPageDef"
+              path="com.packtpub.adfguide.ch9.view.pageDefs.emp_summary_task_flow_definition_emp_summary_task_flow_definition_ExecuteWithParamsPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_empDetailPageDef" path="dynamic.empDetailPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_emp_detail_task_flow_definition_emp_detail_task_flow_definition_ExecuteWithParamsPageDef"
+              path="com.packtpub.adfguide.ch9.view.pageDefs.emp_detail_task_flow_definition_emp_detail_task_flow_definition_ExecuteWithParamsPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_locationLOVPageDef" path="taskflowreturn.locationLOVPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_deptWithTaskflowLOVPageDef"
+              path="taskflowreturn.deptWithTaskflowLOVPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_deptcePageDef" path="contextualevent.deptcePageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_empcePageDef" path="contextualevent.empcePageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_ceMainPageDef" path="contextualevent.ceMainPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_deptTrainPageDef" path="train.deptTrainPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_empTrainPageDef" path="train.empTrainPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_empDetail1PageDef" path="train.empDetail1PageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_empDetail2PageDef" path="train.empDetail2PageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_summaryTrainPageDef" path="train.summaryTrainPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_trainTestPageDef"
+              path="com.packtpub.adfguide.ch9.view.pageDefs.trainTestPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_dept_emp_train_task_flow_definition_dept_emp_train_task_flow_definition_hasMinumumEmployeesPageDef"
+              path="train.dept_emp_train_task_flow_definition_dept_emp_train_task_flow_definition_hasMinumumEmployeesPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_dept_emp_train_task_flow_definition_dept_emp_train_task_flow_definition_routerPageDef"
+              path="train.dept_emp_train_task_flow_definition_dept_emp_train_task_flow_definition_routerPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_mainPageDef"
+              path="com.packtpub.adfguide.ch9.view.pageDefs.mainPageDef"/>
+        <page id="com_packtpub_adfguide_ch9_view_simpleTrainPageDef" path="train.simpleTrainPageDef"/>
+    </pageDefinitionUsages>
+    <dataControlUsages>
+        <BC4JDataControl id="HRServiceAppModuleDataControl" Package="com.packtpub.adfguide.ch9.model.service"
+                         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                         SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                         SupportsSortCollection="true" Configuration="HRServiceAppModuleLocal" syncMode="Immediate"
+                         xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    </dataControlUsages>
+</Application>

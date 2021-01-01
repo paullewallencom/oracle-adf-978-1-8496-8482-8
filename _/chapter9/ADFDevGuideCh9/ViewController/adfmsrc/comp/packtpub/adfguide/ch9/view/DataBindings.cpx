@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.61.83" id="DataBindings"
+             SeparateXMLFiles="false" Package="comp.packtpub.adfguide.ch9.view" ClientType="Generic">
+  <pageMap>
+    <page path="/department.jsf" usageId="comp_packtpub_adfguide_ch9_view_departmentPageDef"/>
+    <page path="/WEB-INF/methodactiviyt-sample-task-flow-definition.xml#dept-emp-task-flow-definition@ExecuteWithParams"
+          usageId="comp_packtpub_adfguide_ch9_view_dept_emp_task_flow_definition_dept_emp_task_flow_definition_ExecuteWithParamsPageDef"/>
+    <page path="/employee.jsf" usageId="comp_packtpub_adfguide_ch9_view_employeePageDef"/>
+    <page path="/WEB-INF/savepoint-sample-task-flow-definition.xml#savepoint-sample-task-flow-definition@hastEmployeesForDepartment"
+          usageId="comp_packtpub_adfguide_ch9_view_savepoint_sample_task_flow_definition_savepoint_sample_task_flow_definition_hastEmployeesForDepartmentPageDef"/>
+    <page path="/WEB-INF/createEmployee.xml#createEmployee@CreateInsert"
+          usageId="comp_packtpub_adfguide_ch9_view_createEmployee_createEmployee_CreateInsertPageDef"/>
+    <page path="/editEmployeeView.jsf" usageId="comp_packtpub_adfguide_ch9_view_editEmployeeViewPageDef"/>
+    <page path="/bookMarkableDep.jsf" usageId="comp_packtpub_adfguide_ch9_view_bookMarkableDepPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="comp_packtpub_adfguide_ch9_view_departmentPageDef"
+          path="comp.packtpub.adfguide.ch9.view.pageDefs.departmentPageDef"/>
+    <page id="comp_packtpub_adfguide_ch9_view_dept_emp_task_flow_definition_dept_emp_task_flow_definition_ExecuteWithParamsPageDef"
+          path="comp.packtpub.adfguide.ch9.view.pageDefs.dept_emp_task_flow_definition_dept_emp_task_flow_definition_ExecuteWithParamsPageDef"/>
+    <page id="comp_packtpub_adfguide_ch9_view_employeePageDef"
+          path="comp.packtpub.adfguide.ch9.view.pageDefs.employeePageDef"/>
+    <page id="comp_packtpub_adfguide_ch9_view_savepoint_sample_task_flow_definition_savepoint_sample_task_flow_definition_hastEmployeesForDepartmentPageDef"
+          path="comp.packtpub.adfguide.ch9.view.pageDefs.savepoint_sample_task_flow_definition_savepoint_sample_task_flow_definition_hastEmployeesForDepartmentPageDef"/>
+    <page id="comp_packtpub_adfguide_ch9_view_createEmployee_createEmployee_CreateInsertPageDef"
+          path="comp.packtpub.adfguide.ch9.view.pageDefs.createEmployee_createEmployee_CreateInsertPageDef"/>
+    <page id="comp_packtpub_adfguide_ch9_view_editEmployeeViewPageDef"
+          path="comp.packtpub.adfguide.ch9.view.pageDefs.editEmployeeViewPageDef"/>
+    <page id="comp_packtpub_adfguide_ch9_view_bookMarkableDepPageDef"
+          path="comp.packtpub.adfguide.ch9.view.pageDefs.bookMarkableDepPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRAppModuleDataControl" Package="comp.packtpub.adfguide.ch9.model.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

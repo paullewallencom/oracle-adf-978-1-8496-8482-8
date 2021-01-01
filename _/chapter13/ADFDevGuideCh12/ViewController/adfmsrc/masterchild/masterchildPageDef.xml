@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="masterchildPageDef"
+                Package="masterchild">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HRServiceSessionEJBLocal" id="HRServiceSessionEJBLocalIterator"/>
+    <accessorIterator MasterBinding="HRServiceSessionEJBLocalIterator" Binds="departmentsFindAll" RangeSize="25"
+                      DataControl="HRServiceSessionEJBLocal"
+                      BeanClass="com.packtpub.adfguide.ch12.model.ejb.Departments" id="departmentsFindAllIterator"/>
+    <searchRegion Binds="departmentsFindAllIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="departmentsFindAllQuery"/>
+    <accessorIterator MasterBinding="departmentsFindAllIterator" Binds="employeesList" RangeSize="25"
+                      DataControl="HRServiceSessionEJBLocal" BeanClass="com.packtpub.adfguide.ch12.model.ejb.Employees"
+                      id="employeesListIterator"/>
+    <searchRegion Binds="employeesListIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="employeesListQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="departmentsFindAllIterator" id="departmentsFindAll">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch12.model.ejb.Departments" Name="departmentsFindAll0">
+        <AttrNames>
+          <Item Value="departmentId"/>
+          <Item Value="departmentName"/>
+          <Item Value="locationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="employeesListIterator" id="employeesList">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch12.model.ejb.Employees" Name="employeesList0">
+        <AttrNames>
+          <Item Value="commissionPct"/>
+          <Item Value="email"/>
+          <Item Value="employeeId"/>
+          <Item Value="firstName"/>
+          <Item Value="hireDate"/>
+          <Item Value="jobId"/>
+          <Item Value="lastName"/>
+          <Item Value="phoneNumber"/>
+          <Item Value="salary"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

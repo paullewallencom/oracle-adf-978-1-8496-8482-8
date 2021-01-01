@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="regionLOV.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                    <af:commandButton text="Select" id="b1" action="select">
+                        <af:setPropertyListener from="#{bindings.LocationId.inputValue}"
+                                                to="#{pageFlowScope.selectedLoc}" type="action"/>
+                    </af:commandButton>
+                    <af:commandButton text="Cancel" id="b2" action="cancel"/>
+                </af:panelGroupLayout>
+                <af:table value="#{bindings.Locations.collectionModel}" var="row" rows="#{bindings.Locations.rangeSize}"
+                          emptyText="#{bindings.Locations.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.Locations.rangeSize}" rowBandingInterval="0"
+                          filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                          queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" filterVisible="true"
+                          varStatus="vs" selectedRowKeys="#{bindings.Locations.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.Locations.collectionModel.makeCurrent}" rowSelection="single"
+                          id="resId1">
+                    <af:column sortProperty="#{bindings.Locations.hints.LocationId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Locations.hints.LocationId.label}" id="resId1c1">
+                        <af:outputText value="#{row.LocationId}" id="ot1">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.Locations.hints.LocationId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.Locations.hints.StreetAddress.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Locations.hints.StreetAddress.label}"
+                               id="resId1c2">
+                        <af:outputText value="#{row.StreetAddress}" id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.Locations.hints.PostalCode.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Locations.hints.PostalCode.label}" id="resId1c3">
+                        <af:outputText value="#{row.PostalCode}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.Locations.hints.City.name}" filterable="true" sortable="true"
+                               headerText="#{bindings.Locations.hints.City.label}" id="resId1c4">
+                        <af:outputText value="#{row.City}" id="ot4"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.Locations.hints.StateProvince.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Locations.hints.StateProvince.label}"
+                               id="resId1c5">
+                        <af:outputText value="#{row.StateProvince}" id="ot5"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.Locations.hints.CountryId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.Locations.hints.CountryId.label}" id="resId1c6">
+                        <af:outputText value="#{row.CountryId}" id="ot6"/>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

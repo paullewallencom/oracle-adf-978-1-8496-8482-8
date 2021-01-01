@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.61.83"
+                id="createEmployee_createEmployee_CreateInsertPageDef"
+                Package="comp.packtpub.adfguide.ch9.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Employees" RangeSize="25" DataControl="HRAppModuleDataControl" id="EmployeesIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

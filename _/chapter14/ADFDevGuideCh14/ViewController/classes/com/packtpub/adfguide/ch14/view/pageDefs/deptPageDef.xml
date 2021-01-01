@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.61.83" id="deptPageDef"
+                Package="com.packtpub.adfguide.ch14.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Departments" RangeSize="25" DataControl="HRServiceAppModuleDataControl" id="DepartmentsIterator"
+              ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DepartmentsIterator" id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsIterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsIterator" id="ManagerId">
+      <AttrNames>
+        <Item Value="ManagerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsIterator" id="LocationId">
+      <AttrNames>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DepartmentsIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DepartmentsIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DepartmentsIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DepartmentsIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="DepartmentsIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <methodAction id="updateDeparmentDetails" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="updateDeparmentDetails" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

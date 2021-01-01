@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CountryLocFkLink"
+  Version="11.1.2.60.81"
+  EntityAssociation="com.packtpub.adfguide.ch4.model.entity.assoc.LocCIdFkAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.packtpub.adfguide.ch4.model.view.link.CountryLocFkLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CountryVO"
+    Cardinality="1"
+    Source="true"
+    Owner="com.packtpub.adfguide.ch4.model.view.CountryVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CountryVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch4.model.view.CountryVO.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="LocationVO"
+    Cardinality="-1"
+    Owner="com.packtpub.adfguide.ch4.model.view.LocationVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="LocationVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch4.model.view.LocationVO.CountryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.packtpub.adfguide.ch4.model.HRModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

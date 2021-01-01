@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Domain SYSTEM "jbo_03_01.dtd">
+<!---->
+<Domain
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRModelPropertySet"
+  Version="11.1.2.60.81">
+  <DesignTime>
+    <Attr Name="_isPersistent" Value="true"/>
+    <Attr Name="_isQueriable" Value="true"/>
+    <Attr Name="_isUpdateable" Value="true"/>
+    <Attr Name="_isSelected" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="Property"
+        ResId="ManagerId_Rule_1"/>
+    </CustomProperties>
+  </Properties>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.packtpub.adfguide.ch11.model.HRDataModelBundle"/>
+  </ResourceBundle>
+</Domain>

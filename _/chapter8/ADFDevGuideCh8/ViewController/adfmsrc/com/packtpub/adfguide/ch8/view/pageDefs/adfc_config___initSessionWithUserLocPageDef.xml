@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81"
+                id="adfc_config___initSessionWithUserLocPageDef" Package="com.packtpub.adfguide.ch8.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="initSessionWithUserLoc" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="initSessionWithUserLoc" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider">
+      <NamedData NDName="locationId" NDValue="#{pageFlowScope.locId}" NDType="java.lang.Integer"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

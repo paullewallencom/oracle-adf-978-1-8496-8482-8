@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRServiceAppModule"
+  Version="11.1.2.60.81"
+  ClearCacheOnRollback="true"
+  ComponentClass="com.packtpub.adfguide.ch7.model.service.HRServiceAppModuleImpl"
+  ComponentInterface="com.packtpub.adfguide.ch7.model.service.common.HRServiceAppModule"
+  ClientProxyName="com.packtpub.adfguide.ch7.model.service.client.HRServiceAppModuleClient">
+    <DesignTime>
+        <Attr Name="_isCodegen" Value="true"/>
+    </DesignTime>
+    <ViewUsage
+      Name="Departments"
+      ViewObjectName="com.packtpub.adfguide.ch7.model.view.DepartmentVO"/>
+    <ViewUsage
+      Name="Employees"
+      ViewObjectName="com.packtpub.adfguide.ch7.model.view.EmployeeVO"/>
+    <ViewUsage
+        Name="EmployeesForDepartment"
+        ViewObjectName="com.packtpub.adfguide.ch7.model.view.EmployeeVO"/>
+    <ViewLinkUsage
+        Name="EmpDeptFkLink2"
+        ViewLinkObjectName="com.packtpub.adfguide.ch7.model.view.link.EmpDeptFkLink"
+        SrcViewUsageName="com.packtpub.adfguide.ch7.model.service.HRServiceAppModule.Departments"
+        DstViewUsageName="com.packtpub.adfguide.ch7.model.service.HRServiceAppModule.EmployeesForDepartment"
+        Reversed="false"/>
+    <ClientInterface>
+        <Method
+          Name="updateDepartmentDeatils"
+          MethodName="updateDepartmentDeatils">
+            <Return
+              Type="oracle.jbo.Row"/>
+            <Parameter
+              Name="departmentRow"
+              Type="oracle.jbo.Row"/>
+        </Method>
+        <Method
+            Name="findEmployeeNamesByCity"
+            MethodName="findEmployeeNamesByCity">
+            <Return
+                Type="java.util.List"/>
+            <Parameter
+                Name="city"
+                Type="java.lang.String"/>
+        </Method>
+        <Method
+            Name="findEmployeeNameById"
+            MethodName="findEmployeeNameById">
+            <Return
+                Type="java.lang.String"/>
+            <Parameter
+                Name="id"
+                Type="java.lang.Integer"/>
+        </Method>
+    </ClientInterface>
+</AppModule>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactVO"
+  Version="11.1.2.60.81"
+  SelectList="ContactEO.CONTACT_ID, 
+       ContactEO.CONTACT_NAME, 
+       ContactEO.ADDRESS, 
+       ContactEO.DESCRIPTION"
+  FromList="HR.CONTACT ContactEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="ContactEO"
+    Entity="com.packtpub.adfguide.ch5.model.entity.ContactEO"/>
+  <ViewAttribute
+    Name="ContactId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ContactId"
+    EntityUsage="ContactEO"
+    AliasName="CONTACT_ID"/>
+  <ViewAttribute
+    Name="ContactName"
+    PrecisionRule="true"
+    EntityAttrName="ContactName"
+    EntityUsage="ContactEO"
+    AliasName="CONTACT_NAME"/>
+  <ViewAttribute
+    Name="Address"
+    PrecisionRule="true"
+    EntityAttrName="Address"
+    EntityUsage="ContactEO"
+    AliasName="ADDRESS"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="ContactEO"
+    AliasName="DESCRIPTION"/>
+</ViewObject>

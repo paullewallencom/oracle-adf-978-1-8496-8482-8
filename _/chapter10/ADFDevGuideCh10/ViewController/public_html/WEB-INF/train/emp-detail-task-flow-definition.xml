@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="emp-detail-task-flow-definition">
+    <default-activity>empDetail1</default-activity>
+    <view id="empDetail1">
+      <display-name>Detail1</display-name>
+      <page>/train/empDetail1.jsff</page>
+      <train-stop>
+        <display-name id="de1">Detail1</display-name>
+      </train-stop>
+    </view>
+    <view id="empDetail2">
+      <display-name>Detail2</display-name>
+      <page>/train/empDetail2.jsff</page>
+      <train-stop>
+        <display-name id="de2">Detail2</display-name>
+      </train-stop>
+    </view>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome>
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__3">
+      <from-activity-id>empDetail2</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>OK</from-outcome>
+        <to-activity-id>taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

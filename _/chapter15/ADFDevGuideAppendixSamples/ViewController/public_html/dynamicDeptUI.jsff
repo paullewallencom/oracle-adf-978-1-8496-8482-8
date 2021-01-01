@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:table rows="#{bindings.DynamicDepts.rangeSize}" fetchSize="#{bindings.DynamicDepts.rangeSize}"
+              emptyText="#{bindings.DynamicDepts.viewable ? 'No data to display.' : 'Access Denied.'}" var="row"
+              rowBandingInterval="0" value="#{bindings.DynamicDepts.collectionModel}"
+              selectedRowKeys="#{bindings.DynamicDepts.collectionModel.selectedRow}"
+              selectionListener="#{bindings.DynamicDepts.collectionModel.makeCurrent}" rowSelection="single" id="t1"
+              editingMode="clickToEdit">
+        <af:forEach items="#{bindings.DynamicDeptsIterator.attributeDefs}" var="def">
+            <af:column headerText="#{def.name}" sortable="true" sortProperty="#{def.name}" id="c1">
+                <af:inputText value="#{row.bindings[def.name].inputValue}"
+                              maximumLength="#{row.bindings[def.name].hints[def.name].precision}" id="fld1"/>
+            </af:column>
+        </af:forEach>
+    </af:table>
+</ui:composition>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRServiceAppModule"
+  Version="12.1.2.62.11"
+  ClearCacheOnRollback="true"
+  ComponentClass="com.packtpub.adfguide.ch9.model.service.HRServiceAppModuleImpl"
+  ComponentInterface="com.packtpub.adfguide.ch9.model.service.common.HRServiceAppModule"
+  ClientProxyName="com.packtpub.adfguide.ch9.model.service.client.HRServiceAppModuleClient">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="Departments"
+    ViewObjectName="com.packtpub.adfguide.ch9.model.view.DepartmentVO"/>
+  <ViewUsage
+    Name="Employees"
+    ViewObjectName="com.packtpub.adfguide.ch9.model.view.EmployeeVO">
+    <ViewCriteriaUsage
+      Name="EmployeeVOCriteria"
+      FullName="com.packtpub.adfguide.ch9.model.view.EmployeeVO.EmployeeVOCriteria"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="EmployeesForDepartment"
+    ViewObjectName="com.packtpub.adfguide.ch9.model.view.EmployeeVO"/>
+  <ViewUsage
+    Name="Locations"
+    ViewObjectName="com.packtpub.adfguide.ch9.model.view.LocationVO"/>
+  <ViewLinkUsage
+    Name="EmpDeptFkLink1"
+    ViewLinkObjectName="com.packtpub.adfguide.ch9.model.view.link.EmpDeptFkLink"
+    SrcViewUsageName="com.packtpub.adfguide.ch9.model.service.HRServiceAppModule.Departments"
+    DstViewUsageName="com.packtpub.adfguide.ch9.model.service.HRServiceAppModule.EmployeesForDepartment"
+    Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="testAction"
+      MethodName="testAction">
+      <Return
+        Name="_return_type_"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="arg"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="hasMinumumEmployees"
+      MethodName="hasMinumumEmployees">
+      <Return
+        Name="_return_type_"
+        Type="boolean"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ceMain.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+                <af:region value="#{bindings.deptcetaskflowdefinition1.regionModel}" id="r1"/>
+                <af:separator id="s1"/>
+                <af:region value="#{bindings.empcetaskflowdefinition1.regionModel}" id="r2"/>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

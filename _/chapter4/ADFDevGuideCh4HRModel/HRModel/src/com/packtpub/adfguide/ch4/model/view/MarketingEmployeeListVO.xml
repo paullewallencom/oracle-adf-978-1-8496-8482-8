@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MarketingEmployeeListVO"
+  Version="11.1.2.60.81"
+  Extends="com.packtpub.adfguide.ch4.model.view.MarketingEmployeeGenericVO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="com.packtpub.adfguide.ch4.model.view.MarketingEmployeeListVORowImpl"
+  ComponentClass="com.packtpub.adfguide.ch4.model.view.MarketingEmployeeListVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.packtpub.adfguide.ch4.model.view.MarketingEmployeeListVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <AttrArray Name="EntityImports">
+    <Item Value="com.packtpub.adfguide.ch4.model.entity.SalesEmployeeExEO"/>
+    <Item Value="com.packtpub.adfguide.ch4.model.entity.ExecutiveEmployeeExEO"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.packtpub.adfguide.ch4.model.HRModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SalesEmployeeExEO"
+  Version="11.1.2.60.81"
+  Extends="com.packtpub.adfguide.ch4.model.entity.ExecutiveEmployeeExEO"
+  DBObjectType="TABLE"
+  DBObjectName="HR.EMPLOYEES"
+  AliasName="SalesEmployeeExEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.packtpub.adfguide.ch4.model.entity.SalesEmployeeExEOImpl">
+    <DesignTime>
+        <Attr Name="_isCodegen" Value="true"/>
+    </DesignTime>
+    <Attribute
+      Name="DepartmentId"
+      DiscrColumn="true"
+      DefaultValue="90"
+      Precision="4"
+      Scale="0"
+      ColumnName="DEPARTMENT_ID"
+      SQLType="NUMERIC"
+      Type="java.lang.Integer"
+      ColumnType="NUMBER"
+      TableName="HR.EMPLOYEES">
+        <DesignTime>
+            <Attr Name="_OverrideAttr" Value="true"/>
+        </DesignTime>
+    </Attribute>
+    <Key
+      Name="EmpDeptFk2">
+        <DesignTime>
+            <Attr Name="_referencedKey" Value="DEPT_ID_PK"/>
+            <Attr Name="_isForeign" Value="true"/>
+            <Attr Name="_DBObjectName" Value="EMP_DEPT_FK"/>
+        </DesignTime>
+        <AttrArray Name="Attributes">
+            <Item Value="com.packtpub.adfguide.ch4.model.entity.SalesEmployeeExEO.DepartmentId"/>
+        </AttrArray>
+    </Key>
+</Entity>

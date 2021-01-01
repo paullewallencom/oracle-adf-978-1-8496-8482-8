@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="programmaticVOPageDef"
+                Package="com.packtpub.adfguide.ch5.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DepartmentProgrammaticVO" RangeSize="25" DataControl="HRServiceAppModuleDataControl"
+              id="DepartmentProgrammaticVOIterator"/>
+    <searchRegion Criteria="DepartmentProgrammaticVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="DepartmentProgrammaticVOIterator" id="DepartmentProgrammaticVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DepartmentProgrammaticVOIterator" id="DepartmentProgrammaticVO">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch5.model.view.DepartmentProgrammaticVO"
+                      Name="DepartmentProgrammaticVO0">
+        <AttrNames>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="ManagerId"/>
+          <Item Value="LocationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="HRServiceAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

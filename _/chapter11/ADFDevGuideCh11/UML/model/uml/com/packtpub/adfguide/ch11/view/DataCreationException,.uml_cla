@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:6bbd6570-da58-4993-b40a-5c6e00f38b08'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='DataCreationException,'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:6ecf60d4-ddbb-4b2c-89f2-c12237a77ffd'>
+   <general href='urn:uuid:ee3ff826-568d-43ae-9c09-942a47d81605'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

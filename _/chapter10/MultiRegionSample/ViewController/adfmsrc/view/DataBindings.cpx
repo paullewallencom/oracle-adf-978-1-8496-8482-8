@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.17" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/emp.jsff" usageId="view_empPageDef"/>
+    <page path="/dept.jsff" usageId="view_deptPageDef"/>
+    <page path="/main.jsf" usageId="view_mainPageDef"/>
+    <page path="/WEB-INF/emp-task-flow-definition.xml#emp-task-flow-definition@ExecuteWithParams"
+          usageId="view_emp_task_flow_definition_emp_task_flow_definition_ExecuteWithParamsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_empPageDef" path="view.pageDefs.empPageDef"/>
+    <page id="view_deptPageDef" path="view.pageDefs.deptPageDef"/>
+    <page id="view_mainPageDef" path="view.pageDefs.mainPageDef"/>
+    <page id="view_emp_task_flow_definition_emp_task_flow_definition_ExecuteWithParamsPageDef"
+          path="view.pageDefs.emp_task_flow_definition_emp_task_flow_definition_ExecuteWithParamsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

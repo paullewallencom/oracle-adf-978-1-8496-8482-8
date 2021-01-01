@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentVO"
+  Version="11.1.2.60.17"
+  SelectList="DepartmentEO.DEPARTMENT_ID, 
+       DepartmentEO.DEPARTMENT_NAME, 
+       DepartmentEO.LOCATION_ID, 
+       DepartmentEO.MANAGER_ID"
+  FromList="HR.DEPARTMENTS DepartmentEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="devguide.adf.ch1.firstapp.model.view.DepartmentVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="DepartmentEO"
+    Entity="devguide.adf.ch1.firstapp.model.entity.DepartmentEO"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="DepartmentEO"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentName"
+    EntityUsage="DepartmentEO"
+    AliasName="DEPARTMENT_NAME"/>
+  <ViewAttribute
+    Name="LocationId"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="DepartmentEO"
+    AliasName="LOCATION_ID"/>
+  <ViewAttribute
+    Name="ManagerId"
+    PrecisionRule="true"
+    EntityAttrName="ManagerId"
+    EntityUsage="DepartmentEO"
+    AliasName="MANAGER_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="devguide.adf.ch1.firstapp.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

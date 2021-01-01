@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.61.83" id="compositeDeptUIPageDef"
+                Package="com.packtpub.adfguide.view.pageDefs">
+  <parameters/>
+    <executables>
+        <variableIterator id="variables"/>
+        <iterator Binds="DeptEmpDetail" DataControl="HRServiceAppModuleDataControl" id="DynamicDeptsIterator"/>
+    </executables>
+    <bindings>
+        <tree IterBinding="DynamicDeptsIterator" id="DynamicDepts">
+            <nodeDefinition Name="Dummy"></nodeDefinition>
+            <!-- Dummy node is just a place holder node def -->
+        </tree>
+    </bindings>
+</pageDefinition>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ContactEO"
+  Version="11.1.2.60.81"
+  DBObjectType="TABLE"
+  DBObjectName="HR.CONTACT"
+  AliasName="ContactEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="ContactId"
+    IsNotNull="true"
+    ColumnName="CONTACT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="HR.CONTACT"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ContactName"
+    Precision="100"
+    ColumnName="CONTACT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR.CONTACT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Address"
+    ColumnName="ADDRESS"
+    SQLType="STRUCT"
+    Domain="com.packtpub.adfguide.ch5.model.AddressType"
+    Type="com.packtpub.adfguide.ch5.model.common.AddressType"
+    ColumnType="ADDRESS_DETAIL"
+    TableName="HR.CONTACT"/>
+  <Attribute
+    Name="Description"
+    Precision="200"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HR.CONTACT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC007634"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007634"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch5.model.entity.ContactEO.ContactId"/>
+    </AttrArray>
+  </Key>
+</Entity>

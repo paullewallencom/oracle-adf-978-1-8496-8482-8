@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:09ad743a-6843-4fa1-9aca-4835bc4c7d84'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='KeyNotPopulatedException'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:ba7da687-a164-4b17-87fc-bf53300c6542'>
+   <general href='urn:uuid:9923bf11-2fc7-49fe-a6f2-e1f561addace'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

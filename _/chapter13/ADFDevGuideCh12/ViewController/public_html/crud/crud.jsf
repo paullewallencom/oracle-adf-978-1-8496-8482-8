@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="crud.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.departmentId.inputValue}" label="#{bindings.departmentId.hints.label}"
+                              required="#{bindings.departmentId.hints.mandatory}"
+                              columns="#{bindings.departmentId.hints.displayWidth}"
+                              maximumLength="#{bindings.departmentId.hints.precision}"
+                              shortDesc="#{bindings.departmentId.hints.tooltip}" id="it1">
+                    <f:validator binding="#{bindings.departmentId.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.departmentName.inputValue}"
+                              label="#{bindings.departmentName.hints.label}"
+                              required="#{bindings.departmentName.hints.mandatory}"
+                              columns="#{bindings.departmentName.hints.displayWidth}"
+                              maximumLength="#{bindings.departmentName.hints.precision}"
+                              shortDesc="#{bindings.departmentName.hints.tooltip}" id="it2">
+                    <f:validator binding="#{bindings.departmentName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.locationId.inputValue}" label="#{bindings.locationId.hints.label}"
+                              required="#{bindings.locationId.hints.mandatory}"
+                              columns="#{bindings.locationId.hints.displayWidth}"
+                              maximumLength="#{bindings.locationId.hints.precision}"
+                              shortDesc="#{bindings.locationId.hints.tooltip}" id="it3">
+                    <f:validator binding="#{bindings.locationId.validator}"/>
+                </af:inputText>
+                <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl1">
+                        <f:facet name="separator">
+                            <af:spacer width="10" height="1" id="s1"/>
+                        </f:facet>
+                        <af:commandButton actionListener="#{bindings.First.execute}" text="First"
+                                          disabled="#{!bindings.First.enabled}" partialSubmit="true" id="cb1"/>
+                        <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                                          disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="cb2"/>
+                        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                                          disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="cb3"/>
+                        <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                                          disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="cb4"/>
+                       <!-- <af:commandButton actionListener="#{CRUDBean.removeDept}" text="Remove Departments"
+                                          disabled="#{!bindings.removeDepartments.enabled}" id="cb8"/>-->
+                        <af:commandButton actionListener="#{bindings.Create.execute}" text="Create New Row In Collection(Without Save)"
+                                          disabled="#{!bindings.Create.enabled}" id="cb6"/>
+                        <af:commandButton actionListener="#{bindings.persistDepartments.execute}"
+                                          text="Save New Department" disabled="#{!bindings.persistDepartments.enabled}"
+                                          id="cb7"/>
+                        <af:commandButton actionListener="#{bindings.mergeDepartments.execute}"
+                                          text="Save Updates on Departments"
+                                          disabled="#{!bindings.mergeDepartments.enabled}" id="cb5"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:panelFormLayout>
+        </af:form>
+    </af:document>
+</f:view>

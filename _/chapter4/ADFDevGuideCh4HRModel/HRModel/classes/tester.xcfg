@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule">
+      <AppModuleConfig name="1398EA30710" DBconnection="java:comp/env/jdbc/HRDS" ApplicationName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="HR" BC4JConfigName="HRServiceAppModuleLocal" jbo.project="com.packtpub.adfguide.ch4.model.HRModel">
+         <AM-Pooling jbo.ampool.doampooling="false"/>
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule"/>
+         <Tester FullProxyInterfaceName="com.packtpub.adfguide.ch4.model.service.common.HRServiceAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

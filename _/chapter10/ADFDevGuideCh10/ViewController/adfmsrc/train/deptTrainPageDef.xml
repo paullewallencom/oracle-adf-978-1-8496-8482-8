@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.2.62.11" id="deptTrainPageDef"
+                Package="train">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Departments" RangeSize="25" DataControl="HRServiceAppModuleDataControl" id="DepartmentsIterator"
+              ChangeEventPolicy="ppr"/>
+    <iterator Binds="EmployeesForDepartment" RangeSize="25" DataControl="HRServiceAppModuleDataControl"
+              id="EmployeesForDepartmentIterator" ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="EmployeesForDepartmentIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmployeesForDepartmentQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DepartmentsIterator" id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsIterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsIterator" id="ManagerId">
+      <AttrNames>
+        <Item Value="ManagerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsIterator" id="LocationId">
+      <AttrNames>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DepartmentsIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DepartmentsIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DepartmentsIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DepartmentsIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="EmployeesForDepartmentIterator" id="EmployeesForDepartment">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch9.model.view.EmployeeVO" Name="EmployeesForDepartment0">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="ManagerId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="DepartmentId1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

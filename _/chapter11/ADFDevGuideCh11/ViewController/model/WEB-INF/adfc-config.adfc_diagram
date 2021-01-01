@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">validate</property>
+      <property
+         name="page">/validate/customValidate.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>validate&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">226.44824</property>
+      <property
+         name="x">159.5</property>
+   </View>
+   <View
+      id="View5">
+      <property
+         name="activityId">error</property>
+      <property
+         name="page">/errorview/defaultErrorView.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>error&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">true</property>
+      <property
+         name="y">208.29883</property>
+      <property
+         name="x">500.0</property>
+   </View>
+   <MethodCall
+      id="MethodCall6">
+      <property
+         name="activityId">methodThrowingError</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>methodThrowingError&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">226.44824</property>
+      <property
+         name="x">364.10254</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View2"
+      to="MethodCall6">
+      <property
+         name="fromOutcome">errorCheck</property>
+      <property
+         name="sdm:polyPoints">R50,200.5,226.09766,323.10254,226.09766,L50</property>
+   </ControlFlowCase>
+</SDM>

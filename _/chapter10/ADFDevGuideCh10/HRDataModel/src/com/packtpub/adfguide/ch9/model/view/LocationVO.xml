@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LocationVO"
+  Version="12.1.2.62.11"
+  SelectList="LocationEO.LOCATION_ID, 
+       LocationEO.STREET_ADDRESS, 
+       LocationEO.POSTAL_CODE, 
+       LocationEO.CITY, 
+       LocationEO.STATE_PROVINCE, 
+       LocationEO.COUNTRY_ID"
+  FromList="LOCATIONS LocationEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="LocationEO"
+    Entity="com.packtpub.adfguide.ch9.model.entity.LocationEO"/>
+  <ViewAttribute
+    Name="LocationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="LocationEO"
+    AliasName="LOCATION_ID"/>
+  <ViewAttribute
+    Name="StreetAddress"
+    PrecisionRule="true"
+    EntityAttrName="StreetAddress"
+    EntityUsage="LocationEO"
+    AliasName="STREET_ADDRESS"/>
+  <ViewAttribute
+    Name="PostalCode"
+    PrecisionRule="true"
+    EntityAttrName="PostalCode"
+    EntityUsage="LocationEO"
+    AliasName="POSTAL_CODE"/>
+  <ViewAttribute
+    Name="City"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="City"
+    EntityUsage="LocationEO"
+    AliasName="CITY"/>
+  <ViewAttribute
+    Name="StateProvince"
+    PrecisionRule="true"
+    EntityAttrName="StateProvince"
+    EntityUsage="LocationEO"
+    AliasName="STATE_PROVINCE"/>
+  <ViewAttribute
+    Name="CountryId"
+    PrecisionRule="true"
+    EntityAttrName="CountryId"
+    EntityUsage="LocationEO"
+    AliasName="COUNTRY_ID"/>
+</ViewObject>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:facelets="http://xmlns.oracle.com/jdev/webapp/facelets"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout id="pgl1">
+    <af:messages id="m1"/>
+    <af:panelFormLayout id="pfl1">
+      <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="t1"/>
+      <af:inputText value="#{bindings.EmployeeId.inputValue}" label="#{bindings.EmployeeId.hints.label}"
+                    required="#{bindings.EmployeeId.hints.mandatory}"
+                    columns="#{bindings.EmployeeId.hints.displayWidth}"
+                    maximumLength="#{bindings.EmployeeId.hints.precision}"
+                    shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it1">
+        <f:validator binding="#{bindings.EmployeeId.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.Salary.inputValue}" label="#{bindings.Salary.hints.label}"
+                    required="#{bindings.Salary.hints.mandatory}" columns="#{bindings.Salary.hints.displayWidth}"
+                    maximumLength="#{bindings.Salary.hints.precision}" shortDesc="#{bindings.Salary.hints.tooltip}"
+                    id="it2">
+        <f:validator binding="#{bindings.Salary.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Salary.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.CommissionPct.inputValue}" label="#{bindings.CommissionPct.hints.label}"
+                    required="#{bindings.CommissionPct.hints.mandatory}"
+                    columns="#{bindings.CommissionPct.hints.displayWidth}"
+                    maximumLength="#{bindings.CommissionPct.hints.precision}"
+                    shortDesc="#{bindings.CommissionPct.hints.tooltip}" id="it3">
+        <f:validator binding="#{bindings.CommissionPct.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.CommissionPct.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.ManagerId.inputValue}" label="#{bindings.ManagerId.hints.label}"
+                    required="#{bindings.ManagerId.hints.mandatory}" columns="#{bindings.ManagerId.hints.displayWidth}"
+                    maximumLength="#{bindings.ManagerId.hints.precision}"
+                    shortDesc="#{bindings.ManagerId.hints.tooltip}" id="it4">
+        <f:validator binding="#{bindings.ManagerId.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.DepartmentId.inputValue}" label="#{bindings.DepartmentId.hints.label}"
+                    required="#{bindings.DepartmentId.hints.mandatory}"
+                    columns="#{bindings.DepartmentId.hints.displayWidth}"
+                    maximumLength="#{bindings.DepartmentId.hints.precision}"
+                    shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="it5">
+        <f:validator binding="#{bindings.DepartmentId.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.DepartmentName.inputValue}" label="#{bindings.DepartmentName.hints.label}"
+                    required="#{bindings.DepartmentName.hints.mandatory}"
+                    columns="#{bindings.DepartmentName.hints.displayWidth}"
+                    maximumLength="#{bindings.DepartmentName.hints.precision}"
+                    shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it6">
+        <f:validator binding="#{bindings.DepartmentName.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.DepartmentId1.inputValue}" label="#{bindings.DepartmentId1.hints.label}"
+                    required="#{bindings.DepartmentId1.hints.mandatory}"
+                    columns="#{bindings.DepartmentId1.hints.displayWidth}"
+                    maximumLength="#{bindings.DepartmentId1.hints.precision}"
+                    shortDesc="#{bindings.DepartmentId1.hints.tooltip}" id="it7">
+        <f:validator binding="#{bindings.DepartmentId1.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId1.format}"/>
+      </af:inputText>
+      <af:commandButton text="OK1" id="b1" action="OK"/>
+    </af:panelFormLayout>
+  </af:panelGroupLayout>
+</ui:composition>

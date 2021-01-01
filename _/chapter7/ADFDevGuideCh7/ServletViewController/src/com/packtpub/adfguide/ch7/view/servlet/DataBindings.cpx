@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.packtpub.adfguide.ch7.view.servlet" ClientType="Generic">
+  <pageMap/>
+  <pageDefinitionUsages>
+    <page id="com_packtpub_adfguide_ch7_view_servlet_departmentPageDef"
+          path="com.packtpub.adfguide.ch7.view.servlet.pageDefs.departmentPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRServiceAppModuleDataControl" Package="com.packtpub.adfguide.ch7.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRServiceAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

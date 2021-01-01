@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="department.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:commandButton actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert" id="cb2"/>
+            <af:commandButton text="Selected Rows" id="cb1" actionListener="#{DepartmentBean.handleAction}"/>
+            <af:commandButton actionListener="#{bindings.Commit.execute}" text="Commit"
+                              disabled="#{!bindings.Commit.enabled}" id="cb3"/>
+            <af:table value="#{bindings.Departments.collectionModel}" var="row" rows="#{bindings.Departments.rangeSize}"
+                      emptyText="#{bindings.Departments.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="14" rowBandingInterval="0"
+                      filterModel="#{bindings.DepartmentsQuery.queryDescriptor}"
+                      queryListener="#{bindings.DepartmentsQuery.processQuery}" filterVisible="true" varStatus="vs"
+                      selectedRowKeys="#{bindings.Departments.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.Departments.collectionModel.makeCurrent}" rowSelection="single"
+                      id="t1" editingMode="clickToEdit" partialTriggers="::cb2"
+                      binding="#{DepartmentBean.departmentTable}">
+                <af:column sortProperty="#{bindings.Departments.hints.DepartmentId.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.Departments.hints.DepartmentId.label}" id="c1">
+                    <af:inputText value="#{row.bindings.DepartmentId.inputValue}"
+                                  label="#{bindings.Departments.hints.DepartmentId.label}"
+                                  required="#{bindings.Departments.hints.DepartmentId.mandatory}"
+                                  columns="#{bindings.Departments.hints.DepartmentId.displayWidth}"
+                                  maximumLength="#{bindings.Departments.hints.DepartmentId.precision}"
+                                  shortDesc="#{bindings.Departments.hints.DepartmentId.tooltip}" id="it1">
+                        <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.Departments.hints.DepartmentId.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Departments.hints.DepartmentName.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.Departments.hints.DepartmentName.label}" id="c2">
+                    <af:inputText value="#{row.bindings.DepartmentName.inputValue}"
+                                  label="#{bindings.Departments.hints.DepartmentName.label}"
+                                  required="#{bindings.Departments.hints.DepartmentName.mandatory}"
+                                  columns="#{bindings.Departments.hints.DepartmentName.displayWidth}"
+                                  maximumLength="#{bindings.Departments.hints.DepartmentName.precision}"
+                                  shortDesc="#{bindings.Departments.hints.DepartmentName.tooltip}" id="it2">
+                        <f:validator binding="#{row.bindings.DepartmentName.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Departments.hints.ManagerId.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.Departments.hints.ManagerId.label}" id="c3">
+                    <af:inputText value="#{row.bindings.ManagerId.inputValue}"
+                                  label="#{bindings.Departments.hints.ManagerId.label}"
+                                  required="#{bindings.Departments.hints.ManagerId.mandatory}"
+                                  columns="#{bindings.Departments.hints.ManagerId.displayWidth}"
+                                  maximumLength="#{bindings.Departments.hints.ManagerId.precision}"
+                                  rendered="#{bindings.Departments.hints.ManagerId.displayHint eq 'Display'}"
+                                  shortDesc="#{bindings.Departments.hints.ManagerId.tooltip}" id="it3">
+                        <f:validator binding="#{row.bindings.ManagerId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.Departments.hints.ManagerId.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.Departments.hints.LocationId.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.Departments.hints.LocationId.label}" id="c4">
+                    <af:inputText value="#{row.bindings.LocationId.inputValue}"
+                                  label="#{bindings.Departments.hints.LocationId.label}"
+                                  required="#{bindings.Departments.hints.LocationId.mandatory}"
+                                  columns="#{bindings.Departments.hints.LocationId.displayWidth}"
+                                  maximumLength="#{bindings.Departments.hints.LocationId.precision}"
+                                  shortDesc="#{bindings.Departments.hints.LocationId.tooltip}" id="it4">
+                        <f:validator binding="#{row.bindings.LocationId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.Departments.hints.LocationId.format}"/>
+                    </af:inputText>
+                </af:column>
+            </af:table>
+        </af:form>
+    </af:document>
+</f:view>

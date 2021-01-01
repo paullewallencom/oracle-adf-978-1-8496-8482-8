@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.packtpub.adfguide.ch6.model.nondb.NonDBAppModuleService">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="com.packtpub.adfguide.ch6.model.nondb.NonDBModel" name="NonDBAppModuleService" SessionClass="com.packtpub.adfguide.ch6.model.nondb.generic.CustomSessionImpl" ApplicationName="com.packtpub.adfguide.ch6.model.nondb.NonDBAppModuleService">
+         <AM-Pooling jbo.ampool.connectionstrategyclass="com.packtpub.adfguide.ch6.model.nondb.generic.CustomConnectionStrategy" PoolClassName="com.packtpub.adfguide.ch6.model.nondb.generic.CustomApplicationPoolImpl" />
+         <Database jbo.TypeMapEntries="OracleApps" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="com.packtpub.adfguide.ch6.model.nondb.NonDBAppModuleService"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

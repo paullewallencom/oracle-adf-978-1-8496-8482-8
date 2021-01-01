@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="bookMarkableDep">
+    <page>/bookMarkableDep.jsf</page>
+    <bookmark>
+      <method>#{BookMarkBean.initDept}</method>
+      <url-parameter id="__2">
+        <name>deptId</name>
+        <value>#{BookMarkBean.departmentId}</value>
+        <converter>#{URLConverter}</converter>
+      </url-parameter>
+    </bookmark>
+  </view>
+  <view id="main">
+    <page>/main.jsf</page>
+  </view>
+  <control-flow-rule id="__5">
+    <from-activity-id>main</from-activity-id>
+    <control-flow-case id="__6">
+      <from-outcome>gotoBookMarkView</from-outcome>
+      <to-activity-id>bookMarkableDep</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>BookMarkBean</managed-bean-name>
+    <managed-bean-class>comp.packtpub.adfguide.ch9.view.BookMarkBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>URLConverter</managed-bean-name>
+    <managed-bean-class>comp.packtpub.adfguide.ch9.view.CustomUrlParameterConverter</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

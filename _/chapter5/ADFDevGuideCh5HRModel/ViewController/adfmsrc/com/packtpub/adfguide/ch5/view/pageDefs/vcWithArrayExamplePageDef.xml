@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="vcWithArrayExamplePageDef"
+                Package="com.packtpub.adfguide.ch5.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Departments" RangeSize="25" DataControl="HRServiceAppModuleDataControl" id="DepartmentsIterator"/>
+    <searchRegion Criteria="DepartmentVC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="DepartmentsIterator" id="DepartmentVCQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DepartmentsIterator" id="Departments">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch5.model.view.DepartmentVO" Name="Departments0">
+        <AttrNames>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="ManagerId"/>
+          <Item Value="LocationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

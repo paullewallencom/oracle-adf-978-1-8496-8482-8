@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">buildDynamicDeptViewCompAndAddtoAM</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>buildDynamicDeptViewCompAndAddtoAM&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">186.79883</property>
+      <property
+         name="x">210.05371</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">dynamicDeptUI</property>
+      <property
+         name="page">/dynamicDeptUI.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>dynamicDeptUI&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">186.49414</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">620.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall2"
+      to="View3">
+      <property
+         name="fromOutcome">buildDynamicDeptViewCompAndAddtoAM</property>
+      <property
+         name="sdm:polyPoints">R50,251.05371,186.44824,579.0,186.14355,L50</property>
+   </ControlFlowCase>
+</SDM>

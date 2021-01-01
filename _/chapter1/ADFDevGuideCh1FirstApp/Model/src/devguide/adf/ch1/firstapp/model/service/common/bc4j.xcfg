@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="devguide.adf.ch1.firstapp.model.service.HRServiceAppModule">
+      <AppModuleConfig name="HRServiceAppModuleLocal" jbo.project="devguide.adf.ch1.firstapp.model.Model" ApplicationName="devguide.adf.ch1.firstapp.model.service.HRServiceAppModule" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="devguide.adf.ch1.firstapp.model.service.HRServiceAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HRServiceAppModuleShared" jbo.project="devguide.adf.ch1.firstapp.model.Model" ApplicationName="devguide.adf.ch1.firstapp.model.service.HRServiceAppModule" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="devguide.adf.ch1.firstapp.model.service.HRServiceAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

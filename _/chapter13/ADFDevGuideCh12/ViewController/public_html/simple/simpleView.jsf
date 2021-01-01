@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="simpleView.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:commandButton text="Test" id="cb1" actionListener="#{SimpleViewBean.iterateOverRows}"/>
+        </af:form>
+    </af:document>
+</f:view>

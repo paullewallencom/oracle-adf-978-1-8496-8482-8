@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="clobDomainExample.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1" usesUpload="true">
+            <af:inputFile label="UploadFile"  id="if1" valueChangeListener="#{ClobDomainExampleBean.onFileUploaded}"
+                         autoSubmit="true"/>
+       
+            <af:table value="#{bindings.FilesStorage.collectionModel}" var="row"
+                      rows="#{bindings.FilesStorage.rangeSize}"
+                      emptyText="#{bindings.FilesStorage.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.FilesStorage.rangeSize}" rowBandingInterval="0"
+                      filterModel="#{bindings.FilesStorageQuery.queryDescriptor}"
+                      queryListener="#{bindings.FilesStorageQuery.processQuery}" filterVisible="true" varStatus="vs"
+                      selectedRowKeys="#{bindings.FilesStorage.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.FilesStorage.collectionModel.makeCurrent}" rowSelection="single"
+                      id="t1" editingMode="clickToEdit" partialTriggers="::if1">
+                <af:column sortProperty="#{bindings.FilesStorage.hints.FileId.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilesStorage.hints.FileId.label}" id="c1">
+                    <af:inputText value="#{row.bindings.FileId.inputValue}"
+                                  label="#{bindings.FilesStorage.hints.FileId.label}"
+                                  required="#{bindings.FilesStorage.hints.FileId.mandatory}"
+                                  columns="#{bindings.FilesStorage.hints.FileId.displayWidth}"
+                                  maximumLength="#{bindings.FilesStorage.hints.FileId.precision}"
+                                  shortDesc="#{bindings.FilesStorage.hints.FileId.tooltip}" id="it1">
+                        <f:validator binding="#{row.bindings.FileId.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.FilesStorage.hints.FileId.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilesStorage.hints.FileName.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilesStorage.hints.FileName.label}" id="c2">
+                    <af:inputText value="#{row.bindings.FileName.inputValue}"
+                                  label="#{bindings.FilesStorage.hints.FileName.label}"
+                                  required="#{bindings.FilesStorage.hints.FileName.mandatory}"
+                                  columns="#{bindings.FilesStorage.hints.FileName.displayWidth}"
+                                  maximumLength="#{bindings.FilesStorage.hints.FileName.precision}"
+                                  shortDesc="#{bindings.FilesStorage.hints.FileName.tooltip}" id="it2">
+                        <f:validator binding="#{row.bindings.FileName.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilesStorage.hints.FileContent.name}" sortable="true"
+                           headerText="#{bindings.FilesStorage.hints.FileContent.label}" id="c3">
+                    <af:inputText value="#{row.bindings.FileContent.inputValue}"
+                                  label="#{bindings.FilesStorage.hints.FileContent.label}"
+                                  required="#{bindings.FilesStorage.hints.FileContent.mandatory}"
+                                  columns="#{bindings.FilesStorage.hints.FileContent.displayWidth}"
+                                  maximumLength="#{bindings.FilesStorage.hints.FileContent.precision}"
+                                  shortDesc="#{bindings.FilesStorage.hints.FileContent.tooltip}" id="it3"
+                                  readOnly="true">
+                        <f:validator binding="#{row.bindings.FileContent.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilesStorage.hints.CreatedOn.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.FilesStorage.hints.CreatedOn.label}" id="c4">
+                    <f:facet name="filter">
+                        <af:inputDate value="#{vs.filterCriteria.CreatedOn}" id="id1">
+                            <af:convertDateTime pattern="#{bindings.FilesStorage.hints.CreatedOn.format}"/>
+                        </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.CreatedOn.inputValue}"
+                                  label="#{bindings.FilesStorage.hints.CreatedOn.label}"
+                                  required="#{bindings.FilesStorage.hints.CreatedOn.mandatory}"
+                                  columns="#{bindings.FilesStorage.hints.CreatedOn.displayWidth}"
+                                  shortDesc="#{bindings.FilesStorage.hints.CreatedOn.tooltip}" id="id2">
+                        <f:validator binding="#{row.bindings.CreatedOn.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.FilesStorage.hints.CreatedOn.format}"/>
+                    </af:inputDate>
+                </af:column>
+            </af:table>
+        </af:form>
+    </af:document>
+</f:view>

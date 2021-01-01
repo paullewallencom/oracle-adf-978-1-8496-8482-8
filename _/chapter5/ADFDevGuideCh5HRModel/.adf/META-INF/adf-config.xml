@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adf-config xmlns="http://xmlns.oracle.com/adf/config" xmlns:config="http://xmlns.oracle.com/bc4j/configuration"
+            xmlns:adf="http://xmlns.oracle.com/adf/config/properties"
+            xmlns:sec="http://xmlns.oracle.com/adf/security/config">
+    <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+        <defaults changeEventPolicy="ppr" useBindVarsForViewCriteriaLiterals="true"/>
+        <startup>
+            <amconfig-overrides>
+                <config:Database jbo.locking.mode="optimistic"/>
+            </amconfig-overrides>
+        </startup>
+    </adf-adfm-config>
+    <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
+        <adf-property name="adfAppUID" value="ADFDevGuideCh5HRModel.com.packtpub.adfguide.ch5"/>
+    </adf:adf-properties-child>
+    <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
+        <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
+                                credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
+    </sec:adf-security-child>
+    <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
+        <defaults changeEventPolicy="ppr"/>
+    </adf-adfm-config>
+    <adf-mds-config xmlns="http://xmlns.oracle.com/adf/mds/config">
+        <mds-config version="11.1.1.000" xmlns="http://xmlns.oracle.com/mds/config">
+            <persistence-config>
+                <metadata-namespaces>
+                    <namespace path="/sessiondef" metadata-store-usage="mdsRepos"/>
+                    <namespace path="/persdef" metadata-store-usage="mdsRepos"/>
+                    <namespace path="/xliffBundles" metadata-store-usage="mdsRepos"/>
+                </metadata-namespaces>
+                <metadata-store-usages>
+                    <metadata-store-usage id="mdsRepos" deploy-target="true" default-cust-store="true"/>
+                </metadata-store-usages>
+            </persistence-config>
+            <cust-config>
+                <match path="/">
+                    <customization-class name="oracle.adf.share.config.SiteCC"/>
+                </match>
+            </cust-config>
+        </mds-config>
+    </adf-mds-config>
+</adf-config>

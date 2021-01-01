@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="emp-detail-task-flow-definition">
+    <default-activity>ExecuteWithParams</default-activity>
+    <input-parameter-definition id="__3">
+      <name>departmentId</name>
+      <value>#{pageFlowScope.departmentId}</value>
+    </input-parameter-definition>
+    <managed-bean id="__4">
+      <managed-bean-name>tfBean</managed-bean-name>
+      <managed-bean-class>com.packtpub.adfguide.ch9.view.managed.TaskFlowBookKeepingBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <initializer>#{tfBean.initializer}</initializer>
+    <finalizer>#{tfBean.finalizer}</finalizer>
+    <view id="empDetail">
+      <page>/dynamic/empDetail.jsff</page>
+    </view>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>ExecuteWithParams</from-outcome>
+        <to-activity-id>empDetail</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.packtpub.adfguide.ch12.view"   ErrorHandlerClass="com.packtpub.adfguide.ch12.view.CustomExceptionHandler" ClientType="Generic">
+  <pageMap>
+    <page path="/tree/tree.jsf" usageId="com_packtpub_adfguide_ch12_view_treePageDef"/>
+    <page path="/masterchild/masterchild.jsf" usageId="com_packtpub_adfguide_ch12_view_masterchildPageDef"/>
+    <page path="/search/search.jsf" usageId="com_packtpub_adfguide_ch12_view_searchPageDef"/>
+    <page path="/simple/simpleView.jsf" usageId="com_packtpub_adfguide_ch12_view_simpleViewPageDef"/>
+    <page path="/crud/crud.jsf" usageId="com_packtpub_adfguide_ch12_view_CustomExceptionHandler_crudPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_packtpub_adfguide_ch12_view_treePageDef" path="tree.treePageDef"/>
+    <page id="com_packtpub_adfguide_ch12_view_masterchildPageDef" path="masterchild.masterchildPageDef"/>
+    <page id="com_packtpub_adfguide_ch12_view_searchPageDef" path="search.searchPageDef"/>
+    <page id="com_packtpub_adfguide_ch12_view_simpleViewPageDef" path="simple.simpleViewPageDef"/>
+    <page id="com_packtpub_adfguide_ch12_view_CustomExceptionHandler_crudPageDef" path="crud.crudPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="HRServiceSessionEJBLocal" path="com.packtpub.adfguide.ch12.model.ejb.HRServiceSessionEJBLocal"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="tree.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelCollection id="pc1">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                    <af:toolbar id="t1">
+                        <af:commandToolbarButton text="createChildren" id="ctb1"
+                                                 actionListener="#{bindings.createChildren.execute}"
+                                                 disabled="#{!bindings.createChildren.enabled}"/>
+                        <af:commandToolbarButton actionListener="#{bindings.Commit.execute}" text="Commit" id="ctb3"/>
+                        <af:commandToolbarButton text="deleteChildren" id="ctb2"
+                                                 actionListener="#{bindings.deleteChildren.execute}"
+                                                 disabled="#{!bindings.deleteChildren.enabled}"/>
+                    </af:toolbar>
+                </f:facet>
+                <f:facet name="statusbar"/>
+                <af:treeTable value="#{bindings.Departments.treeModel}" var="node"
+                              selectionListener="#{bindings.Departments.treeModel.makeCurrent}" rowSelection="single"
+                              id="tt1" binding="#{TreeBean.deptTreeTable}" partialTriggers="::ctb1 ::ctb2 ::ctb3"
+                              editingMode="clickToEdit">
+                    <f:facet name="nodeStamp">
+                        <af:column id="c1">
+                            <af:inputText value="#{node.DepartmentId}" id="ot1"/>
+                        </af:column>
+                    </f:facet>
+                    <f:facet name="pathStamp">
+                        <af:outputText value="#{node}" id="ot2"/>
+                    </f:facet>
+                    <af:column headerText="DepartmentName" filterable="true" sortProperty="DepartmentName"
+                               sortable="true" id="cl1">
+                        <af:inputText value="#{node.DepartmentName}" id="it1"/>
+                    </af:column>
+                    <af:column sortProperty="EmployeeId" sortable="true" headerText="EmployeeId" filterable="true"
+                               id="cl2">
+                        <af:inputText value="#{node.EmployeeId}" id="it2" autoSubmit="true"/>
+                    </af:column>
+                    <af:column headerText="FirstName" sortable="true" sortProperty="FirstName" filterable="true"
+                               id="cl3">
+                        <af:inputText value="#{node.FirstName}" id="it3"/>
+                    </af:column>
+                    <af:column sortProperty="LastName" sortable="true" headerText="LastName" filterable="true" id="c4">
+                        <af:inputText value="#{node.LastName}" id="it4"/>
+                    </af:column>
+                    <af:column sortProperty="JobId" sortable="true" headerText="JobId" filterable="true" id="c2">
+                        <af:inputText value="#{node.JobId}" id="it5"/>
+                    </af:column>
+                    <af:column sortProperty="Email" sortable="true" headerText="Email" filterable="true" id="c3">
+                        <af:inputText value="#{node.Email}" id="it6"/>
+                        <af:commandLink id="cl4" text="#{node}" rendered="#{node.hierTypeBinding.viewDefName ==  
+                                       'com.packtpub.adfguide.ch8.model.view.EmployeeVO'}"/>
+                    </af:column>
+                    <af:column sortProperty="HireDate" sortable="false" headerText="HireDate" id="c5">
+                        <af:inputDate value="#{node.HireDate}" id="it7">
+                            <af:convertDateTime pattern="#{bindings.bindings.hints.HireDate.format}"/>
+                        </af:inputDate>
+                    </af:column>
+                </af:treeTable>
+            </af:panelCollection>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <exception-handler>error</exception-handler>
+  <view id="validate">
+    <page>/validate/programmticallyBundlingErrors.jsf</page>
+  </view>
+  <view id="error">
+    <page>/errorview/defaultErrorView.jsf</page>
+  </view>
+  <method-call id="methodThrowingError">
+    <method>#{bindings.methodThrowingError.execute}</method>
+    <outcome>
+      <fixed-outcome>methodThrowingError</fixed-outcome>
+    </outcome>
+  </method-call>
+  <control-flow-rule id="__2">
+    <from-activity-id>validate</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome>errorCheck</from-outcome>
+      <to-activity-id>methodThrowingError</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>ValidateBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch11.view.view.ValidateBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>ErrorPageBean</managed-bean-name>
+    <managed-bean-class>com.packtpub.adfguide.ch11.view.general.ErrorPageBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

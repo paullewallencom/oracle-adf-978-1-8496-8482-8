@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.packtpub.adfguide.ch11.view.view" ClientType="Generic"
+             ErrorHandlerClass="com.packtpub.adfguide.ch11.view.general.CustomDCErrorHandlerImpl">
+  <pageMap>
+    <page path="/errbundle/errorBundle.jsf" usageId="com_packtpub_adfguide_ch11_view_view_errorBundlePageDef"/>
+    <page path="/validate/validate.jsf" usageId="com_packtpub_adfguide_ch11_view_view_validatePageDef"/>
+    <page path="PageFlow#methodThrowingError"
+          usageId="com_packtpub_adfguide_ch11_view_view_adfc_config___methodThrowingErrorPageDef"/>
+    <page path="/domain/emailDomainValidate.jsf"
+          usageId="com_packtpub_adfguide_ch11_view_view_emailDomainValidatePageDef"/>
+    <page path="/validate/programmticallyBundlingErrors.jsf" usageId="com_packtpub_adfguide_ch11_view_view_customValidatePageDef"/>
+    <page path="/validate/modelValidation.jsf" usageId="com_packtpub_adfguide_ch11_view_view_modelValidationPageDef"/>
+    <page path="/validate/attributeValidate.jsf"
+          usageId="com_packtpub_adfguide_ch11_view_view_attributeValidatePageDef"/>
+    <page path="/errorHandler/empEdit.jsf" usageId="com_packtpub_adfguide_ch11_view_view_empEditPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_packtpub_adfguide_ch11_view_view_errorBundlePageDef" path="errbundle.errorBundlePageDef"/>
+    <page id="com_packtpub_adfguide_ch11_view_view_validatePageDef" path="validate.validatePageDef"/>
+    <page id="com_packtpub_adfguide_ch11_view_view_adfc_config___methodThrowingErrorPageDef"
+          path="com.packtpub.adfguide.ch11.view.view.pageDefs.adfc_config___methodThrowingErrorPageDef"/>
+    <page id="com_packtpub_adfguide_ch11_view_view_emailDomainValidatePageDef"
+          path="domain.emailDomainValidatePageDef"/>
+    <page id="com_packtpub_adfguide_ch11_view_view_customValidatePageDef" path="validate.customValidatePageDef"/>
+    <page id="com_packtpub_adfguide_ch11_view_view_modelValidationPageDef" path="validate.modelValidationPageDef"/>
+    <page id="com_packtpub_adfguide_ch11_view_view_attributeValidatePageDef" path="validate.attributeValidatePageDef"/>
+    <page id="com_packtpub_adfguide_ch11_view_view_empEditPageDef" path="errorHandler.empEditPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRServiceAppModuleDataControl" Package="com.packtpub.adfguide.ch11.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRServiceAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

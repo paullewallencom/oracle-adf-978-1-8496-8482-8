@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RegionalOfficeEO"
+  Version="11.1.2.60.81"
+  DBObjectType="table"
+  DBObjectName="REGIONAL_OFFICE"
+  AliasName="RegionalOfficeEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="BranchId"
+    IsNotNull="true"
+    ColumnName="BRANCH_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="REGIONAL_OFFICE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="BranchName"
+    Precision="20"
+    ColumnName="BRANCH_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="REGIONAL_OFFICE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RegionId"
+    ColumnName="REGION_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="REGIONAL_OFFICE"/>
+  <Attribute
+    Name="CountryId"
+    Precision="2"
+    ColumnName="COUNTRY_ID"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="REGIONAL_OFFICE"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="RegionalOfficePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="REGIONAL_OFFICE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.packtpub.adfguide.ch5.model.entity.RegionalOfficeEO.BranchId"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="dynamicTaskFlow.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelFormLayout id="pfl1">
+                <af:panelLabelAndMessage label="#{bindings.DepartmentId.hints.label}" id="plam1">
+                    <af:outputText value="#{bindings.DepartmentId.inputValue}" id="ot1">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
+                    </af:outputText>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.DepartmentName.hints.label}" id="plam2">
+                    <af:outputText value="#{bindings.DepartmentName.inputValue}" id="ot2"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.ManagerId.hints.label}" id="plam3">
+                    <af:outputText value="#{bindings.ManagerId.inputValue}" id="ot3">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+                    </af:outputText>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{bindings.LocationId.hints.label}" id="plam4">
+                    <af:outputText value="#{bindings.LocationId.inputValue}" id="ot4">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationId.format}"/>
+                    </af:outputText>
+                </af:panelLabelAndMessage>
+                <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl1">
+                        <f:facet name="separator">
+                            <af:spacer width="10" height="1" id="s1"/>
+                        </f:facet>
+                        <af:commandButton actionListener="#{bindings.First.execute}" text="First"
+                                          disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1">
+                            <af:setPropertyListener from="true" to="#{requestScope.deptChanged}" type="action"/>
+                        </af:commandButton>
+                        <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                                          disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2">
+                            <af:setPropertyListener from="true" to="#{requestScope.deptChanged}" type="action"/>
+                        </af:commandButton>
+                        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                                          disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3">
+                            <af:setPropertyListener from="true" to="#{requestScope.deptChanged}" type="action"/>
+                        </af:commandButton>
+                        <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                                          disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4">
+                            <af:setPropertyListener from="true" to="#{requestScope.deptChanged}" type="action"/>
+                        </af:commandButton>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:panelFormLayout>
+            <af:selectBooleanCheckbox text="Summary View" label="Please select " id="sbc1"
+                                      valueChangeListener="#{viewScope.DynamicTaskFlowBean.empViewChanged}"
+                                      autoSubmit="true"/>
+            <af:region value="#{bindings.dynamicEmpRegion.regionModel}" id="r1" partialTriggers="::sbc1"/>
+        </af:form>
+    </af:document>
+</f:view>

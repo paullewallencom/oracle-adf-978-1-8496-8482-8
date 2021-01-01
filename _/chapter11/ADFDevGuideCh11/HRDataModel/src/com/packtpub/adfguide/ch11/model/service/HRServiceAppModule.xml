@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRServiceAppModule"
+  Version="11.1.2.61.83"
+  ClearCacheOnRollback="true" 
+  ComponentClass="com.packtpub.adfguide.ch11.model.service.HRServiceAppModuleImpl"
+  ComponentInterface="com.packtpub.adfguide.ch11.model.service.common.HRServiceAppModule"
+  ClientProxyName="com.packtpub.adfguide.ch11.model.service.client.HRServiceAppModuleClient"
+  DefClass="com.packtpub.adfguide.ch11.model.service.HRServiceAppModuleDefImpl"
+  PropertySet="com.packtpub.adfguide.ch11.model.HRModelPropertySet">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_isDefCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="Departments"
+    ViewObjectName="com.packtpub.adfguide.ch11.model.view.DepartmentVO"/>
+  <ViewUsage
+    Name="EmployeesForDepartment"
+    ViewObjectName="com.packtpub.adfguide.ch11.model.view.EmployeeVO"/>
+  <ViewUsage
+    Name="Employees"
+    ViewObjectName="com.packtpub.adfguide.ch11.model.view.EmployeeVO"/>
+  <ViewLinkUsage
+    Name="EmpDeptFkLink1"
+    ViewLinkObjectName="com.packtpub.adfguide.ch11.model.view.link.EmpDeptFkLink"
+    SrcViewUsageName="com.packtpub.adfguide.ch11.model.service.HRServiceAppModule.Departments"
+    DstViewUsageName="com.packtpub.adfguide.ch11.model.service.HRServiceAppModule.EmployeesForDepartment"
+    Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="methodThrowingError"
+      MethodName="methodThrowingError">
+      <Return
+        Type="void"/>
+    </Method>
+    <Method
+      Name="throwAttrValExceptionProgrammatically"
+      MethodName="throwAttrValExceptionProgrammatically">
+      <Return
+        Type="void"/>
+    </Method>
+    <Method
+      Name="throwRowValExceptionProgrammatically"
+      MethodName="throwRowValExceptionProgrammatically">
+      <Return
+        Type="void"/>
+    </Method>
+    <Method
+      Name="throwTxnValExceptionProgrammatically"
+      MethodName="throwTxnValExceptionProgrammatically">
+      <Return
+        Type="void"/>
+    </Method>
+    <Method
+      Name="throwAttrSetValExceptionProgrammatically"
+      MethodName="throwAttrSetValExceptionProgrammatically">
+      <Return
+        Type="void"/>
+    </Method>
+    <Method
+      Name="throwValidationExceptionsProgrammatically"
+      MethodName="throwValidationExceptionsProgrammatically">
+      <Return
+        Type="void"/>
+    </Method>
+    <Method
+      Name="validateDepartmentName"
+      MethodName="validateDepartmentName">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="deptRow"
+        Type="oracle.jbo.Row"/>
+    </Method>
+  </ClientInterface>
+   <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.packtpub.adfguide.ch11.model.HRDataModelBundle"/>
+  </ResourceBundle>
+</AppModule>

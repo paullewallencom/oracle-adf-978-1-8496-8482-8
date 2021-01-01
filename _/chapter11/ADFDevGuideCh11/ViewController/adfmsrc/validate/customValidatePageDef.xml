@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="customValidatePageDef"
+                Package="validate">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="throwAttrSetValExceptionProgrammatically" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="throwAttrSetValExceptionProgrammatically" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"
+                  ReturnName="data.HRServiceAppModuleDataControl.methodResults.throwAttrSetValExceptionProgrammatically_HRServiceAppModuleDataControl_dataProvider_throwAttrSetValExceptionProgrammatically_result"/>
+    <methodAction id="throwAttrValExceptionProgrammatically" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="throwAttrValExceptionProgrammatically" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"
+                  ReturnName="data.HRServiceAppModuleDataControl.methodResults.throwAttrValExceptionProgrammatically_HRServiceAppModuleDataControl_dataProvider_throwAttrValExceptionProgrammatically_result"/>
+    <methodAction id="throwRowValExceptionProgrammatically" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="throwRowValExceptionProgrammatically" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"
+                  ReturnName="data.HRServiceAppModuleDataControl.methodResults.throwRowValExceptionProgrammatically_HRServiceAppModuleDataControl_dataProvider_throwRowValExceptionProgrammatically_result"/>
+    <methodAction id="throwTxnValExceptionProgrammatically" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="throwTxnValExceptionProgrammatically" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"
+                  ReturnName="data.HRServiceAppModuleDataControl.methodResults.throwTxnValExceptionProgrammatically_HRServiceAppModuleDataControl_dataProvider_throwTxnValExceptionProgrammatically_result"/>
+    <methodAction id="throwValidationExceptionsProgrammatically" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="throwValidationExceptionsProgrammatically" IsViewObjectMethod="false"
+                  DataControl="HRServiceAppModuleDataControl"
+                  InstanceName="data.HRServiceAppModuleDataControl.dataProvider"
+                  ReturnName="data.HRServiceAppModuleDataControl.methodResults.throwValidationExceptionsProgrammatically_HRServiceAppModuleDataControl_dataProvider_throwValidationExceptionsProgrammatically_result"/>
+  </bindings>
+</pageDefinition>

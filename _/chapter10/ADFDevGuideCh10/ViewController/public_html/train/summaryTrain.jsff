@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:facelets="http://xmlns.oracle.com/jdev/webapp/facelets"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:panelGroupLayout id="pgl7">
+        <af:messages id="m1"/>
+        <af:navigationPane hint="tabs" value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                           var="trainNode" id="np1">
+            <f:facet name="nodeStamp">
+                <af:commandNavigationItem text="#{trainNode.textAndAccessKey}" id="cni1" visited="#{trainNode.visited}"
+                                          disabled="#{trainNode.disabled}" action="#{trainNode.action}"
+                                          selected="#{TrainBean.currentTab}"/>
+            </f:facet>
+        </af:navigationPane>
+        <dvt:hierarchyViewer inlineStyle="width:100%;height:600px;" id="hv1" var="node"
+                             value="#{bindings.Departments.treeModel}"
+                             selectionListener="#{bindings.Departments.treeModel.makeCurrent}" featuresOff="nodeDetail"
+                             layout="hier_vert_top" levelFetchSize="#{bindings.Departments.rangeSize}">
+            <dvt:link linkType="orthogonalRounded" id="l1"/>
+            <dvt:node type="com.packtpub.adfguide.ch9.model.view.DepartmentVO" width="233" height="233" id="n1">
+                <f:facet name="zoom100">
+                    <af:panelGroupLayout inlineStyle="padding:5px;" layout="vertical" id="pgl1">
+                        <af:panelGroupLayout layout="horizontal" id="pgl2">
+                            <af:panelGroupLayout layout="vertical" id="pgl3">
+                                <af:outputText value="#{node.DepartmentId}"
+                                               inlineStyle="font-weight:bold;font-size:14px;color:#383A47" id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Departments.hints.DepartmentId.format}"/>
+                                </af:outputText>
+                                <af:outputText value="#{node.DepartmentName}" inlineStyle="font-size:14px;color:#383A47"
+                                               id="ot2"/>
+                                <af:outputText value="#{node.ManagerId}"
+                                               inlineStyle="font-style:italic;font-size:14px;color:#383A47" id="ot3">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Departments.hints.ManagerId.format}"/>
+                                </af:outputText>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:spacer height="5" id="s1"/>
+                        <dvt:panelCard effect="slide_horz" id="pc1">
+                            <af:showDetailItem text="Panel Card 1" id="sdi1">
+                                <af:spacer height="2" id="s2"/>
+                                <af:panelFormLayout inlineStyle="padding:5px;" id="pfl1">
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.LocationId.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam1">
+                                        <af:outputText value="#{node.LocationId}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot4">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Departments.hints.LocationId.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:showDetailItem>
+                        </dvt:panelCard>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </dvt:node>
+            <dvt:node type="com.packtpub.adfguide.ch9.model.view.EmployeeVO" width="233" height="233" id="n2">
+                <f:facet name="zoom100">
+                    <af:panelGroupLayout inlineStyle="padding:5px;" layout="vertical" id="pgl4">
+                        <af:panelGroupLayout layout="horizontal" id="pgl5">
+                            <af:panelGroupLayout layout="vertical" id="pgl6">
+                                <af:outputText value="#{node.EmployeeId}"
+                                               inlineStyle="font-weight:bold;font-size:14px;color:#383A47" id="ot5">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Departments.hints.EmployeeId.format}"/>
+                                </af:outputText>
+                                <af:outputText value="#{node.FirstName}" inlineStyle="font-size:14px;color:#383A47"
+                                               id="ot6"/>
+                                <af:outputText value="#{node.LastName}"
+                                               inlineStyle="font-style:italic;font-size:14px;color:#383A47" id="ot7"/>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:spacer height="5" id="s3"/>
+                        <dvt:panelCard effect="slide_horz" id="pc2">
+                            <af:showDetailItem text="Panel Card 1" id="sdi2">
+                                <af:spacer height="2" id="s4"/>
+                                <af:panelFormLayout inlineStyle="padding:5px;" id="pfl2">
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.Email.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam2">
+                                        <af:outputText value="#{node.Email}" inlineStyle="font-size:14px;color:#383A47"
+                                                       id="ot8"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.PhoneNumber.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam3">
+                                        <af:outputText value="#{node.PhoneNumber}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot9"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Panel Card 2" id="sdi3">
+                                <af:spacer height="2" id="s5"/>
+                                <af:panelFormLayout inlineStyle="padding:5px;" id="pfl3">
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.HireDate.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam4">
+                                        <af:outputText value="#{node.HireDate}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot10">
+                                            <af:convertDateTime pattern="#{bindings.Departments.hints.HireDate.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.JobId.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam5">
+                                        <af:outputText value="#{node.JobId}" inlineStyle="font-size:14px;color:#383A47"
+                                                       id="ot11"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Panel Card 3" id="sdi4">
+                                <af:spacer height="2" id="s6"/>
+                                <af:panelFormLayout inlineStyle="padding:5px;" id="pfl4">
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.Salary.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam6">
+                                        <af:outputText value="#{node.Salary}" inlineStyle="font-size:14px;color:#383A47"
+                                                       id="ot12">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Departments.hints.Salary.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.CommissionPct.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam7">
+                                        <af:outputText value="#{node.CommissionPct}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot13">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Departments.hints.CommissionPct.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Panel Card 4" id="sdi5">
+                                <af:spacer height="2" id="s7"/>
+                                <af:panelFormLayout inlineStyle="padding:5px;" id="pfl5">
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.ManagerId.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam8">
+                                        <af:outputText value="#{node.ManagerId}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot14">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Departments.hints.ManagerId.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.DepartmentId.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam9">
+                                        <af:outputText value="#{node.DepartmentId}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot15">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Departments.hints.DepartmentId.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Panel Card 5" id="sdi6">
+                                <af:spacer height="2" id="s8"/>
+                                <af:panelFormLayout inlineStyle="padding:5px;" id="pfl6">
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.DepartmentName.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam10">
+                                        <af:outputText value="#{node.DepartmentName}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot16"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Departments.hints.DepartmentId1.label}"
+                                                             labelStyle="font-size:14px;color:#5A6A7A" id="plam11">
+                                        <af:outputText value="#{node.DepartmentId1}"
+                                                       inlineStyle="font-size:14px;color:#383A47" id="ot17">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Departments.hints.DepartmentId1.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:showDetailItem>
+                        </dvt:panelCard>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </dvt:node>
+        </dvt:hierarchyViewer>
+    </af:panelGroupLayout>
+</ui:composition>

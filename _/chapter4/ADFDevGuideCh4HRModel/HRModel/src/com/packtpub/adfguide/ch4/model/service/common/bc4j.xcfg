@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule">
+      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="com.packtpub.adfguide.ch4.model.HRModel" name="HRServiceAppModuleLocal" ApplicationName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule">
+         <AM-Pooling jbo.ampool.doampooling="false"/>
+         <Database jbo.TypeMapEntries="OracleApps" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HRServiceAppModuleShared" DeployPlatform="LOCAL" jbo.project="com.packtpub.adfguide.ch4.model.HRModel" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" ApplicationName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule">
+         <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1"/>
+         <Database jbo.TypeMapEntries="OracleApps" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="com.packtpub.adfguide.ch4.model.service.HRServiceAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/HRDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

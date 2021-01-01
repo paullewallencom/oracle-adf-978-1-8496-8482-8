@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="treeSearch.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="DepartmentEO" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.DepartmentViewCriteriaQuery.queryDescriptor}"
+                              model="#{bindings.DepartmentViewCriteriaQuery.queryModel}"
+                              queryListener="#{bindings.DepartmentViewCriteriaQuery.processQuery}"
+                              queryOperationListener="#{bindings.DepartmentViewCriteriaQuery.processQueryOperation}"
+                              resultComponentId="::resId1"/>
+                </af:panelHeader>
+                <af:treeTable value="#{bindings.Departments.treeModel}" var="node"
+                              selectionListener="#{bindings.Departments.treeModel.makeCurrent}" rowSelection="single"
+                              id="resId1" width="300" columnStretching="last">
+                    <f:facet name="nodeStamp">
+                        <af:column id="c1">
+                            <af:outputText value="#{node}" id="ot1"/>
+                        </af:column>
+                    </f:facet>
+                    <f:facet name="pathStamp">
+                        <af:outputText value="#{node}" id="ot2"/>
+                       
+                    </f:facet>
+                </af:treeTable>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

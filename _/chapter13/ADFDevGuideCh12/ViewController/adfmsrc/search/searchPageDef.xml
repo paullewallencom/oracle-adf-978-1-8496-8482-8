@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81" id="searchPageDef" Package="search">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HRServiceSessionEJBLocal" id="HRServiceSessionEJBLocalIterator"/>
+    <accessorIterator MasterBinding="HRServiceSessionEJBLocalIterator" Binds="departmentsFindAll" RangeSize="25"
+                      DataControl="HRServiceSessionEJBLocal"
+                      BeanClass="com.packtpub.adfguide.ch12.model.ejb.Departments" id="departmentsFindAllIterator"/>
+    <searchRegion Criteria="DepartmentsCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="departmentsFindAllIterator" id="DepartmentsCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="departmentsFindAllIterator" id="departmentsFindAll">
+      <nodeDefinition DefName="com.packtpub.adfguide.ch12.model.ejb.Departments" Name="departmentsFindAll0">
+        <AttrNames>
+          <Item Value="departmentId"/>
+          <Item Value="departmentName"/>
+          <Item Value="locationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

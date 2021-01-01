@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FileStorageVO"
+  Version="11.1.2.60.81"
+  SelectList="FileStorageEO.FILE_ID, 
+       FileStorageEO.FILE_NAME, 
+       FileStorageEO.FILE_CONTENT, 
+       FileStorageEO.CREATED_ON"
+  FromList="HR.FILE_STORAGE FileStorageEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="com.packtpub.adfguide.ch5.model.view.FileStorageVORowImpl"
+  ComponentClass="com.packtpub.adfguide.ch5.model.view.FileStorageVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <EntityUsage
+    Name="FileStorageEO"
+    Entity="com.packtpub.adfguide.ch5.model.entity.FileStorageEO"/>
+  <ViewAttribute
+    Name="FileId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FileId"
+    EntityUsage="FileStorageEO"
+    AliasName="FILE_ID"
+    IsUpdateable="while_insert"/>
+  <ViewAttribute
+    Name="FileName"
+    PrecisionRule="true"
+    EntityAttrName="FileName"
+    EntityUsage="FileStorageEO"
+    AliasName="FILE_NAME"/>
+  <ViewAttribute
+    Name="FileContent"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="FileContent"
+    EntityUsage="FileStorageEO"
+    AliasName="FILE_CONTENT"/>
+  <ViewAttribute
+    Name="CreatedOn"
+    PrecisionRule="true"
+    EntityAttrName="CreatedOn"
+    EntityUsage="FileStorageEO"
+    AliasName="CREATED_ON"/>
+</ViewObject>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.1.0'/>
+ <uml:Class xmi:uuid='urn:uuid:3129f0f8-6c55-47b8-840c-5fbf8b1378f4'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='RowValException,'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:895cb11a-1c82-45cc-a3a5-7db70b5d6ad6'>
+   <general href='urn:uuid:9923bf11-2fc7-49fe-a6f2-e1f561addace'/>
+  </generalization>
+ </uml:Class>
+</xmi:XMI>

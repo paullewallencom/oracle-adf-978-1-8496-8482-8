@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.61.83" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.packtpub.adfguide.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/WEB-INF/dynamicUI-task-flow-definition.xml#dynamicUI-task-flow-definition@buildDynamicDeptViewCompAndAddtoAM"
+          usageId="com_packtpub_adfguide_view_dynamicUI_task_flow_definition_dynamicUI_task_flow_definition_buildDynamicDeptViewCompAndAddtoAMPageDef"/>
+    <page path="/dynamicDeptUI.jsff" usageId="com_packtpub_adfguide_view_dynamicDeptUIPageDef"/>
+    <page path="/dynamicUIMain.jsf" usageId="com_packtpub_adfguide_view_dynamicUIMainPageDef"/>
+    <page path="/compositeVO.jsf" usageId="com_packtpub_adfguide_view_compositeVOPageDef"/>
+    <page path="/dynamicNestingofAM.jsf" usageId="com_packtpub_adfguide_view_dynamicNestingofAMPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_packtpub_adfguide_view_dynamicUI_task_flow_definition_dynamicUI_task_flow_definition_buildDynamicDeptViewCompAndAddtoAMPageDef"
+          path="com.packtpub.adfguide.view.pageDefs.dynamicUI_task_flow_definition_dynamicUI_task_flow_definition_buildDynamicDeptViewCompAndAddtoAMPageDef"/>
+    <page id="com_packtpub_adfguide_view_dynamicDeptUIPageDef"
+          path="com.packtpub.adfguide.view.pageDefs.dynamicDeptUIPageDef"/>
+    <page id="com_packtpub_adfguide_view_dynamicUIMainPageDef"
+          path="com.packtpub.adfguide.view.pageDefs.dynamicUIMainPageDef"/>
+    <page id="com_packtpub_adfguide_view_compositeVOPageDef"
+          path="com.packtpub.adfguide.view.pageDefs.compositeVOPageDef"/>
+    <page id="com_packtpub_adfguide_view_dynamicNestingofAMPageDef"
+          path="com.packtpub.adfguide.view.pageDefs.dynamicNestingofAMPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HRServiceAppModuleDataControl" Package="com.packtpub.adfguide.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRServiceAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="TxnAppModuleDataControl" Package="com.packtpub.adfguide.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="TxnAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="HRServiceAppModuleDataControl1" Package="com.packtpub.adfguide.ch5.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HRServiceAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="mulitSelect.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:selectManyListbox value="#{bindings.Departments.inputValue}" label="#{bindings.Departments.label}"
+                                  id="sml1">
+                <f:selectItems value="#{bindings.Departments.items}" id="si1"/>
+            </af:selectManyListbox>
+            <af:commandButton text="Find Selection" id="cb1" action="#{MulitSelectBean.findActionHandler}"/>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:preferred-managed-bean-name:MulitSelectBean-->
+</f:view>

@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View3">
+      <property
+         name="activityId">bookMarkableDep</property>
+      <property
+         name="page">/bookMarkableDep.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>bookMarkableDep&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">241.79883</property>
+      <property
+         name="x">259.69434</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">main</property>
+      <property
+         name="page">/main.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>main&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">244.59766</property>
+      <property
+         name="x">52.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View4"
+      to="View3">
+      <property
+         name="fromOutcome">gotoBookMarkView</property>
+      <property
+         name="sdm:polyPoints">R50,93.0,244.24707,218.69434,241.44824,L50</property>
+   </ControlFlowCase>
+</SDM>
